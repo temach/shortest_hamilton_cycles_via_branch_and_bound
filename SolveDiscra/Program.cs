@@ -249,6 +249,7 @@ namespace SolveDiscra
         public List<Point> never_take_edges = new List<Point>();
         public List<int> debug_rows = new List<int>();
         public List<int> debug_cols = new List<int>();
+        public Matrix before_print_matrix;
 
         public List<int> minfromrows;
         public int alpha;
@@ -340,8 +341,9 @@ namespace SolveDiscra
                 s1.path = new List<Point>();
             }
             s1.AddMustTakeEdge(must_take_edge);
+            s1.before_print_matrix = s1.CalcPrintMatrix();
             s1.weight = s1.parent.weight + s1.NormaliseGetDelta();
-            s1.CalcPrintMatrix();
+            s1.print_matrix = s1.CalcPrintMatrix();
             this.child_s1 = s1;
             return s1;
         }
@@ -365,8 +367,9 @@ namespace SolveDiscra
             }
             // calculate self stuff
             s0.DropEdgeAndNeverTakeIt(never_take_edge);
+            s0.before_print_matrix = s0.CalcPrintMatrix();
             s0.weight = s0.parent.weight + s0.NormaliseGetDelta();
-            s0.CalcPrintMatrix();
+            s0.print_matrix = s0.CalcPrintMatrix();
             this.child_s0 = s0;
             return s0;
         }
@@ -434,21 +437,21 @@ namespace SolveDiscra
             return ordered_path;
         }
 
-        public string CalcPrintMatrix()
+        public Matrix CalcPrintMatrix()
         {
-            print_matrix  = this.matrix.DeepCopy();
+            var to_print_matrix  = this.matrix.DeepCopy();
             // we must delete starting with largest indexes first so as not to mess up the print matrix
             var by_row = path.OrderByDescending(p => p.X);
             var by_col = path.OrderByDescending(p => p.Y);
             foreach(var edge_taken in by_col)
             {
-                print_matrix.PhysicallyDropCol(edge_taken.Y);
+                to_print_matrix.PhysicallyDropCol(edge_taken.Y);
             }
             foreach (var edge_taken in by_row)
             {
-                print_matrix.PhysicallyDropRow(edge_taken.X);
+                to_print_matrix.PhysicallyDropRow(edge_taken.X);
             }
-            return print_matrix.ToString();
+            return to_print_matrix.DeepCopy();
         }
 
         public string PrintOneChild(Node ch)
@@ -557,8 +560,12 @@ namespace SolveDiscra
         public string tex_newpage = @"\newpage" + "\n";
         public string flushleft = @"\begin{{flushleft}}{0}" + @"\end{{flushleft}}" + "\n\n";
         public string flushright = @"\begin{{flushright}}{0}" + @"\end{{flushright}}" + "\n\n";
+        public string tex_subfloat = @"\subfloat[][]{{" + "{0}" + "}}";
+        public string tex_hfill = @"\hfill" + "\n";
+        public string tex_one_row_table = @"\begin{{table}}[ht]" + "\n{0}\n" + @"\end{{table}}" + "\n\n";
         public string tex_cline = @"\cline{0-";
         public string tex_hline = @"\hline";
+        public string tex_tabular = @"\begin{{tabular}}[]{{" + "{0}" + "}}\n";
         public string tex_table_end = "\n" + @"\end{tabular}" + "\n";
         public string tex_page_head = @"Определим дугу ветвления для разбиения множества {0}\\" + "\n";
         public string tex_nl = @"\\" + "\n";
@@ -572,7 +579,7 @@ namespace SolveDiscra
                 {
                     if (row[j] < 100)
                     {
-                        row[j] -= vector[i];
+                        row[j] += vector[i];
                     }
                 }
             }
@@ -588,7 +595,7 @@ namespace SolveDiscra
                 {
                     if (current_mat[i,j] < 100)
                     {
-                        current_mat[i,j] -= vector[j];
+                        current_mat[i,j] += vector[j];
                     }
                 }
             }
@@ -626,7 +633,7 @@ namespace SolveDiscra
             string table_layout = string.Join("c", column_lines);
             var columns_names = Enumerable.Repeat("a", cur_mat.qtyCols).ToList();
             columns_names.Insert(0, table_title);
-            string table_begin = "\n" + @"\begin{tabular}[]{" + table_layout + "}\n";
+            string table_begin = string.Format(tex_tabular, table_layout);
             List<string> table_inner = cur_mat.mat.Select(
                 (row, index) => "a &" + Row2Tex(row) + tex_nl + tex_hline).ToList();
             // add first row of names
@@ -649,12 +656,12 @@ namespace SolveDiscra
             var columns_names = Enumerable.Repeat("a", cur_matrix.qtyCols).ToList();
             columns_names.Insert(0, table_title);
             columns_names.Add("min");
-            string table_begin = @"\begin{tabular}[]{" + table_layout + "}\n";
+            string table_begin = string.Format(tex_tabular, table_layout);
             // process the inner table. The "a & " is for extra column with names
             List<string> table_inner = cur_matrix.mat.Select(
                 (row,index) => "a & " + Row2Tex(row) + " & " + print_min_rows[index] + tex_nl + tex_hline).ToList();
             // add last row of minimum values
-            table_inner.Add("min & " + Row2Tex(print_min_cols) + tex_nl);
+            table_inner.Add("min & " + Row2Tex(print_min_cols) + @"\\");
             // add first row of names
             table_inner.Insert(0, string.Join(" & ", columns_names) + tex_nl + tex_hline);
             // insert leading \hline
@@ -675,13 +682,21 @@ namespace SolveDiscra
         // for s1 child: get parent.matrix (current print_matrix) + drop the edges/columns
         public Matrix TexS1_MatrixBefore()
         {
-            var cur_matrix = this.child_s1.matrix.DeepCopy();
-            TexAddRows(cur_matrix, this.child_s1.minfromrows);
-            TexAddCols(cur_matrix, this.child_s1.minfromcols);
-            cur_matrix.PhysicallyDropRow(this.drop.X);
-            cur_matrix.PhysicallyDropCol(this.drop.Y);
-            var cur_path = this.child_s1.path.eCopyValueElements();
-            return TexCalcPrintMatrix(cur_matrix, cur_path);
+            return child_s1.before_print_matrix;
+            // if this is the final step, then we the after matrix is meesed up
+            // so we can not use it to go backwards to before matrix. So just use print matrix as before matrix.
+            //if (this.child_s1.print_matrix.qtyRows == 2)
+            //{
+            //    return this.child_s1.print_matrix.DeepCopy();
+            //}
+
+            //var cur_matrix = this.child_s1.matrix.DeepCopy();
+            //TexAddRows(cur_matrix, this.child_s1.minfromrows);
+            //TexAddCols(cur_matrix, this.child_s1.minfromcols);
+            //cur_matrix.PhysicallyDropRow(this.drop.X);
+            //cur_matrix.PhysicallyDropCol(this.drop.Y);
+            //var cur_path = this.path.eCopyValueElements();
+            //return TexCalcPrintMatrix(cur_matrix, cur_path);
         }
 
         // to calculate child's lower bounds
@@ -702,16 +717,25 @@ namespace SolveDiscra
         {
             string print_before = TexMakeChildTableBefore(before.DeepCopy(), ch.name);
             string lower_bound = TexLowerBound(ch);
-            string left = string.Format(flushleft, print_before + lower_bound);
+            string left = string.Format(tex_subfloat, print_before + lower_bound);
+            left += tex_hfill;
             // after matrix = child.print_matrix
             string print_after = TexTableFromMatrix(ch.print_matrix.DeepCopy(), ch.name);
-            string right = string.Format(flushright, print_after);
-            // left and right matrices
-            return left + right;
+            string right = string.Format(tex_subfloat, print_after);
+            // put under "table"
+            string one_row = string.Format(tex_one_row_table, left + right);
+            return one_row;
         }
 
         public string TexOneNode()
         {
+            // oh. my. dog.
+            if (this.why_no_children.Contains("costs more"))
+            {
+                // we terminated this node becasue it was overweight. We don't need 
+                // to generate a page for it.
+                return "";
+            }
             string print_cur_node = TexTableFromMatrix(this.print_matrix.DeepCopy(), this.name);
             // change this code to also remove the "edge="
             string print_drop_edge = DotEdge() + "\n";
@@ -868,7 +892,8 @@ namespace SolveDiscra
             node.weight = node.NormaliseGetDelta();
             node.drop = node.matrix.GetSubproblemSplitEdge();
             node.path = new List<Point>();
-            node.CalcPrintMatrix();
+            node.print_matrix = node.CalcPrintMatrix();
+            node.before_print_matrix = node.print_matrix.DeepCopy();
             all_nodes[node.name] = node;
             Console.WriteLine("\n\n");
             Console.WriteLine(node.matrix.ToString());
@@ -985,14 +1010,15 @@ namespace SolveDiscra
 \usepackage{graphicx} % пакет для вставки графики, я хз нахуя он нужен в этом документе
 \usepackage{listings} % пакет для вставки кода
 \usepackage[table]{xcolor}% http://ctan.org/pkg/xcolor for coloring the inside of a cell
+\usepackage[lofdepth,lotdepth]{subfig} % so we can place figures side by side
 
 \usepackage{geometry} % меняю поля страницы
 
 %из параметров ниже понятно, какие части полей страницы меняются:
-\geometry{left=2.5cm}
+\geometry{left=1cm}
 \geometry{right=1cm}
-\geometry{top=2cm}
-\geometry{bottom=2cm}
+\geometry{top=1cm}
+\geometry{bottom=1cm}
 
 \renewcommand{\baselinestretch}{1} % меняю ширину между строками на 1.5
 \righthyphenmin=2
