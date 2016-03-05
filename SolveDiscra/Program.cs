@@ -683,20 +683,6 @@ namespace SolveDiscra
         public Matrix TexS1_MatrixBefore()
         {
             return child_s1.before_print_matrix;
-            // if this is the final step, then we the after matrix is meesed up
-            // so we can not use it to go backwards to before matrix. So just use print matrix as before matrix.
-            //if (this.child_s1.print_matrix.qtyRows == 2)
-            //{
-            //    return this.child_s1.print_matrix.DeepCopy();
-            //}
-
-            //var cur_matrix = this.child_s1.matrix.DeepCopy();
-            //TexAddRows(cur_matrix, this.child_s1.minfromrows);
-            //TexAddCols(cur_matrix, this.child_s1.minfromcols);
-            //cur_matrix.PhysicallyDropRow(this.drop.X);
-            //cur_matrix.PhysicallyDropCol(this.drop.Y);
-            //var cur_path = this.path.eCopyValueElements();
-            //return TexCalcPrintMatrix(cur_matrix, cur_path);
         }
 
         // to calculate child's lower bounds
@@ -746,9 +732,18 @@ namespace SolveDiscra
             if (this.child_s1 != null && child_s0 != null)
             {
                 Matrix s0_before = TexS0_MatrixBefore();
-                Matrix s1_before = TexS1_MatrixBefore();
                 s0_data_row = TexMakeThirdOfPageWithChild(child_s0, s0_before);
-                s1_data_row = TexMakeThirdOfPageWithChild(child_s1, s1_before);
+                // if this is a finishing matrix for s1, do something slightly different
+                Matrix s1_before = TexS1_MatrixBefore();
+                if (s1_before.qtyRows == 2)
+                {
+                    s1_data_row = TexTableFromMatrix(s1_before.DeepCopy(), child_s1.name);
+                    s1_data_row += TexLowerBound(child_s1);
+                }
+                else
+                {
+                    s1_data_row = TexMakeThirdOfPageWithChild(child_s1, s1_before);
+                }
             }
             // now final combined page
             string node_full_data = string.Format("{0}\n{1}\n{2}"
