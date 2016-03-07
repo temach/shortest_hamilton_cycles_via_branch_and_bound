@@ -583,19 +583,20 @@ namespace SolveDiscra
         public string tex_page_head = @"Определим дугу ветвления для разбиения множества {0}\\" + "\n";
         public string tex_nl = @"\\" + "\n";
         public string cellcolor = @"\cellcolor{yellow}";
+        public string tex_caption = @"\captionof*{table}{";
 
-        public Tuple<List<string>,List<string>> TexGetCurrentColsRows(List<Point> new_path)
+        public Tuple<List<string>,List<string>> TexGetCurrentRowsCols(List<Point> new_path)
         {
             List<int> row_names = Enumerable.Range(0, 6).ToList();
             List<int> col_names = Enumerable.Range(0, 6).ToList();
             foreach(var edge_taken in new_path)
             {
-                col_names[edge_taken.Y] = int.MaxValue;
                 row_names[edge_taken.X] = int.MaxValue;
+                col_names[edge_taken.Y] = int.MaxValue;
             }
-            var cols = col_names.Where(n => n < 100).Select(n => n.ToString()).ToList();
-            var rows = row_names.Where(n => n < 100).Select(n => n.ToString()).ToList();
-            return new Tuple<List<string>,List<string>>(cols,rows);
+            var rows = row_names.Where(n => n < 100).Select(n => (n+1).ToString()).ToList();
+            var cols = col_names.Where(n => n < 100).Select(n => (n+1).ToString()).ToList();
+            return new Tuple<List<string>,List<string>>(rows,cols);
         }
 
         public Matrix TexCalcPrintMatrix(Matrix mat, List<Point> new_path)
@@ -643,7 +644,7 @@ namespace SolveDiscra
             {
                 path_before_last = path_before_last.Take(4).ToList();
             }
-            var row_col_names = TexGetCurrentColsRows(path_before_last);
+            var row_col_names = TexGetCurrentRowsCols(path_before_last);
             var row_names = row_col_names.Item1;
             var col_names = row_col_names.Item2;
             col_names.Insert(0, nd.name);
@@ -668,7 +669,7 @@ namespace SolveDiscra
             // remove last vertical bar in for min apha value column
             table_layout = table_layout.Substring(0, table_layout.Length - 1);
             // Get column and row names
-            var row_col_names = TexGetCurrentColsRows(nd.path);
+            var row_col_names = TexGetCurrentRowsCols(nd.path);
             var row_names = row_col_names.Item1;
             var col_names = row_col_names.Item2;
             col_names.Insert(0, nd.name);
@@ -702,7 +703,7 @@ namespace SolveDiscra
             // remove last vertical bar in for min apha value column
             table_layout = table_layout.Substring(0, table_layout.Length - 1);
             // Get column and row names
-            var row_col_names = TexGetCurrentColsRows(nd.path);
+            var row_col_names = TexGetCurrentRowsCols(nd.path);
             var row_names = row_col_names.Item1;
             var col_names = row_col_names.Item2;
             col_names.Insert(0, nd.name);
@@ -744,13 +745,13 @@ namespace SolveDiscra
         {
             string this_node_low_bound_str = name.Replace('s', 'b');
             string child_low_bound_str = ch.name.Replace('s', 'b');
-            string low_b_calculation = string.Format("{0} = {1} + {2} + {3} = {4}" + tex_nl
+            string low_b_calculation = string.Format("{0} = {1} + {2} + {3} = {4}"
                 , child_low_bound_str
                 , this_node_low_bound_str
                 , ch.alpha
                 , ch.beta
                 , ch.weight);
-            return low_b_calculation;
+            return tex_caption + low_b_calculation + "}";
         }
 
         public Point GoFromGlobalIntoToPrintCoords(Point global_edge, List<Point> cur_drop_path)
@@ -798,14 +799,21 @@ namespace SolveDiscra
                 print_before = TexMakeTableWithMinColumn(before.DeepCopy(), ch);
             }
             string lower_bound = TexLowerBound(ch);
-            string left = string.Format(tex_subfloat, print_before + lower_bound);
+            string left = string.Format(tex_subfloat, print_before);
             left += tex_hfill;
             // after matrix = child.print_matrix
             string print_after = TexTableFromMatrix(ch.print_matrix.DeepCopy(), ch);
             string right = string.Format(tex_subfloat, print_after);
+            right += lower_bound;
             // put under "table"
             string one_row = string.Format(tex_one_row_table, left + right);
             return one_row;
+        }
+
+        public string TexEdge()
+        {
+            var str = DotEdge();
+            return str.Length > 0 ? str.Substring(5) : "";
         }
 
         public string TexOneNode()
@@ -819,7 +827,7 @@ namespace SolveDiscra
             }
             string print_cur_node = TexTableFromMatrix(this.print_matrix.DeepCopy(), this);
             // change this code to also remove the "edge="
-            string print_drop_edge = DotEdge() + "\n";
+            string print_drop_edge = tex_caption + TexEdge() + "}\n";
             string flushleft_current_print = string.Format(flushleft, print_cur_node + print_drop_edge);
             // get rows of data
             string s0_data_row = "";
@@ -878,7 +886,7 @@ namespace SolveDiscra
     class Program
     {
         Dictionary<string, Point> letter2coord = new Dictionary<string, Point>();
-        Dictionary<string, Node> all_nodes = new Dictionary<string, Node>();
+        List<Node> all_nodes = new List<Node>();
         Dictionary<string, List<string>> graph = new Dictionary<string, List<string>>();
         List<string> vlist = new List<string> { "a", "b", "c", "d", "e", "f" };
         Dictionary<Tuple<string, string>, int> edges_weight;
@@ -984,7 +992,7 @@ namespace SolveDiscra
             node.path = new List<Point>();
             node.print_matrix = node.CalcPrintMatrix();
             node.before_print_matrix = node.print_matrix.DeepCopy();
-            all_nodes[node.name] = node;
+            all_nodes.Add(node);
             Console.WriteLine("\n\n");
             Console.WriteLine(node.matrix.ToString());
             // left branch
@@ -992,8 +1000,8 @@ namespace SolveDiscra
             // right branch
             var s0 = node.BranchLeftToS0(node.drop);
             // add to dict
-            all_nodes[s1.name] = s1;
-            all_nodes[s0.name] = s0;
+            all_nodes.Add(s1);
+            all_nodes.Add(s0);
         }
 
         public void Run()
@@ -1003,12 +1011,12 @@ namespace SolveDiscra
             while (true)
             {
                 // calculate new best ever final path cost
-                var tmp = all_nodes.Values.Where(nd => nd.IsTerminal);
+                var tmp = all_nodes.Where(nd => nd.IsTerminal);
                 if (tmp.Count() > 0)
                 {
                     best_final_path_cost_ever = tmp.Select(nd => nd.weight).Min();
                 }
-                var cur_leaves = all_nodes.Values.Where(nd => nd.IsLeaf && (! nd.IsTerminal)).ToList();
+                var cur_leaves = all_nodes.Where(nd => nd.IsLeaf && (! nd.IsTerminal)).ToList();
                 if (cur_leaves.Count == 0)
                 {
                     // all leaves are also terminal nodes, so we have analysed everything
@@ -1033,9 +1041,9 @@ namespace SolveDiscra
                 }
                 curnode.drop = curnode.matrix.GetSubproblemSplitEdge();
                 Node s1 = curnode.BranchRightToS1(curnode.drop);
-                all_nodes[s1.name] = s1;
+                all_nodes.Add(s1);
                 Node s0 = curnode.BranchLeftToS0(curnode.drop);
-                all_nodes[s0.name] = s0;
+                all_nodes.Add(s0);
             }
             // after the while(true) loop
             WriteOutput();
@@ -1047,7 +1055,7 @@ namespace SolveDiscra
         {
             // after the while loop
             var output = new List<string>();
-            foreach (var node in all_nodes.Values)
+            foreach (var node in all_nodes)
             {
                 output.Add(node.ToString());
             }
@@ -1058,7 +1066,7 @@ namespace SolveDiscra
         {
             List<string> print = new List<string>();
             print.Add("digraph G {\n");
-            foreach (Node nd in all_nodes.Values)
+            foreach (Node nd in all_nodes)
             {
                 print.Add(nd.GetDotCommand());
             }
@@ -1070,7 +1078,7 @@ namespace SolveDiscra
         {
             List<string> print = new List<string>();
             print.Add(LatexData.header);
-            foreach (Node nd in all_nodes.Values)
+            foreach (Node nd in all_nodes)
             {
                 print.Add(nd.LatexCommand());
             }
@@ -1113,6 +1121,14 @@ namespace SolveDiscra
 \renewcommand{\baselinestretch}{1} % меняю ширину между строками на 1.5
 \righthyphenmin=2
 \begin{document}
+
+% make the captions stick to the LEFT of the page
+\captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+
+\captionsetup[subfloat]{labelformat=empty}
+
 
 \begin{titlepage}
 \newpage
