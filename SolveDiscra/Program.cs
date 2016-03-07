@@ -584,6 +584,7 @@ namespace SolveDiscra
         public string tex_nl = @"\\" + "\n";
         public string cellcolor = @"\cellcolor{yellow}";
         public string tex_caption = @"\captionof*{table}{";
+        public string txt_let_us_split_this_node = "Let us find edge to split on for set: ";
 
         public Tuple<List<string>,List<string>> TexGetCurrentRowsCols(List<Point> new_path)
         {
@@ -854,7 +855,7 @@ namespace SolveDiscra
                 , s0_data_row
                 , s1_data_row
             );
-            return node_full_data + tex_newpage;
+            return txt_let_us_split_this_node + this.name + tex_nl + node_full_data + tex_newpage;
         }
 
         public string LatexCommand()
@@ -1111,6 +1112,7 @@ namespace SolveDiscra
 \usepackage[lofdepth,lotdepth]{subfig} % so we can place figures side by side
 
 \usepackage{geometry} % меняю поля страницы
+\usepackage{caption}
 
 %из параметров ниже понятно, какие части полей страницы меняются:
 \geometry{left=1cm}
