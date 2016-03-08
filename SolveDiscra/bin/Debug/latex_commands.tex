@@ -1,0 +1,778 @@
+\documentclass[a4paper,10pt]{report} % формат бумаги А4, шрифт по умолчанию - 12pt
+
+% заметь, что в квадратных скобках вводятся необязательные аргументы пакетов.
+% а в фигурных - обязательные
+
+\usepackage[T2A]{fontenc} % поддержка кириллицы в Латехе
+\usepackage[utf8]{inputenc} % включаю кодировку ютф8
+\usepackage[english,russian]{babel} % использую русский и английский языки с переносами
+
+\usepackage{indentfirst} % делать отступ в начале параграфа
+\usepackage{amsmath} % математические штуковины
+\usepackage{mathtools} % еще математические штуковины
+\usepackage{mathtext}
+\usepackage{multicol} % подключаю мультиколоночность в тексте
+\usepackage{graphicx} % пакет для вставки графики, я хз нахуя он нужен в этом документе
+\usepackage{listings} % пакет для вставки кода
+\usepackage[table]{xcolor}% http://ctan.org/pkg/xcolor for coloring the inside of a cell
+\usepackage[lofdepth,lotdepth]{subfig} % so we can place figures side by side
+
+\usepackage{geometry} % меняю поля страницы
+\usepackage{caption}
+
+%из параметров ниже понятно, какие части полей страницы меняются:
+\geometry{left=1cm}
+\geometry{right=1cm}
+\geometry{top=1cm}
+\geometry{bottom=1cm}
+
+\renewcommand{\baselinestretch}{1} % меняю ширину между строками на 1.5
+\righthyphenmin=2
+\begin{document}
+
+
+\begin{titlepage}
+\newpage
+
+\begin{center}
+{\large НАЦИОНАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ УНИВЕРСИТЕТ \\
+«ВЫСШАЯ ШКОЛА ЭКОНОМИКИ» 							\\
+Дисциплина: «Дискретная математика»}
+
+\vfill % заполняет длину страницы вертикально
+
+{\large Домашнее задание 1}
+
+\bigskip
+
+\underline{Исследование комбинационных схем}\\
+Вариант 002
+
+\vfill
+
+\begin{flushright}
+Выполнил: Абрамов Артем,\\
+студент группы БПИ1511\medskip \\
+Преподаватель: Авдошин С.М., \\
+профессор департамента \\
+программной инженерии \\
+факультета компьютерных наук
+\end{flushright}
+
+\vfill
+
+Москва \number\year
+
+\end{center}
+\end{titlepage}
+
+
+
+% make the captions stick to the LEFT of the page
+\captionsetup{justification=raggedright,
+singlelinecheck=false
+}
+
+\captionsetup[subfloat]{labelformat=empty}
+
+
+Let us find edge to split on for set: s\\
+\begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|c|c|}
+\hline
+s & 1 & 2 & 3 & 4 & 5 & 6\\
+\hline
+1 & $\infty$ &      0 &      6 &      5 &      3 &      2\\
+\hline
+2 &      0 & $\infty$ &      5 &      4 &      0 &      1\\
+\hline
+3 &      6 &      5 & $\infty$ &      0 &      0 &      1\\
+\hline
+4 &      5 &      4 &      0 & $\infty$ &      3 &      0\\
+\hline
+5 &      3 &      0 &      0 &      3 & $\infty$ &      2\\
+\hline
+6 &      2 &      1 &      1 &      0 &      2 & $\infty$\\
+\hline
+\end{tabular}
+\captionof*{table}{(1,2)}
+\end{flushleft}
+
+
+\begin{table}[ht]
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c|c}
+\hline
+s0 & 1 & 2 & 3 & 4 & 5 & 6 & min\\
+\hline
+1 & $\infty$ & \cellcolor{yellow}$\infty$ &      6 &      5 &      3 &      2 & 2\\
+\hline
+2 &      0 & $\infty$ &      5 &      4 &      0 &      1 & 0\\
+\hline
+3 &      6 &      5 & $\infty$ &      0 &      0 &      1 & 0\\
+\hline
+4 &      5 &      4 &      0 & $\infty$ &      3 &      0 & 0\\
+\hline
+5 &      3 &      0 &      0 &      3 & $\infty$ &      2 & 0\\
+\hline
+6 &      2 &      1 &      1 &      0 &      2 & $\infty$ & 0\\
+\hline
+min &      0 &      0 &      0 &      0 &      0 &      0\\
+\end{tabular}
+}\hfill
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c|}
+\hline
+s0 & 1 & 2 & 3 & 4 & 5 & 6\\
+\hline
+1 & $\infty$ & $\infty$ &      4 &      3 &      1 &      0\\
+\hline
+2 &      0 & $\infty$ &      5 &      4 &      0 &      1\\
+\hline
+3 &      6 &      5 & $\infty$ &      0 &      0 &      1\\
+\hline
+4 &      5 &      4 &      0 & $\infty$ &      3 &      0\\
+\hline
+5 &      3 &      0 &      0 &      3 & $\infty$ &      2\\
+\hline
+6 &      2 &      1 &      1 &      0 &      2 & $\infty$\\
+\hline
+\end{tabular}
+}\captionof*{table}{b0 = b + 2 + 0 = 30}
+\end{table}
+
+
+\begin{table}[ht]
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c}
+\hline
+s1 & 1 & 3 & 4 & 5 & 6 & min\\
+\hline
+2 & \cellcolor{yellow}$\infty$ &      5 &      4 &      0 &      1 & 0\\
+\hline
+3 &      6 & $\infty$ &      0 &      0 &      1 & 0\\
+\hline
+4 &      5 &      0 & $\infty$ &      3 &      0 & 0\\
+\hline
+5 &      3 &      0 &      3 & $\infty$ &      2 & 0\\
+\hline
+6 &      2 &      1 &      0 &      2 & $\infty$ & 0\\
+\hline
+min &      2 &      0 &      0 &      0 &      0\\
+\end{tabular}
+}\hfill
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|}
+\hline
+s1 & 1 & 3 & 4 & 5 & 6\\
+\hline
+2 & $\infty$ &      5 &      4 &      0 &      1\\
+\hline
+3 &      4 & $\infty$ &      0 &      0 &      1\\
+\hline
+4 &      3 &      0 & $\infty$ &      3 &      0\\
+\hline
+5 &      1 &      0 &      3 & $\infty$ &      2\\
+\hline
+6 &      0 &      1 &      0 &      2 & $\infty$\\
+\hline
+\end{tabular}
+}\captionof*{table}{b1 = b + 0 + 2 = 30}
+\end{table}
+
+\newpage
+
+Let us find edge to split on for set: s1\\
+\begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|c|}
+\hline
+s1 & 1 & 3 & 4 & 5 & 6\\
+\hline
+2 & $\infty$ &      5 &      4 &      0 &      1\\
+\hline
+3 &      4 & $\infty$ &      0 &      0 &      1\\
+\hline
+4 &      3 &      0 & $\infty$ &      3 &      0\\
+\hline
+5 &      1 &      0 &      3 & $\infty$ &      2\\
+\hline
+6 &      0 &      1 &      0 &      2 & $\infty$\\
+\hline
+\end{tabular}
+\captionof*{table}{(2,5)}
+\end{flushleft}
+
+
+\begin{table}[ht]
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c}
+\hline
+s10 & 1 & 3 & 4 & 5 & 6 & min\\
+\hline
+2 & $\infty$ &      5 &      4 & \cellcolor{yellow}$\infty$ &      1 & 1\\
+\hline
+3 &      4 & $\infty$ &      0 &      0 &      1 & 0\\
+\hline
+4 &      3 &      0 & $\infty$ &      3 &      0 & 0\\
+\hline
+5 &      1 &      0 &      3 & $\infty$ &      2 & 0\\
+\hline
+6 &      0 &      1 &      0 &      2 & $\infty$ & 0\\
+\hline
+min &      0 &      0 &      0 &      0 &      0\\
+\end{tabular}
+}\hfill
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|}
+\hline
+s10 & 1 & 3 & 4 & 5 & 6\\
+\hline
+2 & $\infty$ &      4 &      3 & $\infty$ &      0\\
+\hline
+3 &      4 & $\infty$ &      0 &      0 &      1\\
+\hline
+4 &      3 &      0 & $\infty$ &      3 &      0\\
+\hline
+5 &      1 &      0 &      3 & $\infty$ &      2\\
+\hline
+6 &      0 &      1 &      0 &      2 & $\infty$\\
+\hline
+\end{tabular}
+}\captionof*{table}{b10 = b1 + 1 + 0 = 31}
+\end{table}
+
+
+\begin{table}[ht]
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c}
+\hline
+s11 & 1 & 3 & 4 & 6 & min\\
+\hline
+3 &      4 & $\infty$ &      0 &      1 & 0\\
+\hline
+4 &      3 &      0 & $\infty$ &      0 & 0\\
+\hline
+5 & \cellcolor{yellow}$\infty$ &      0 &      3 &      2 & 0\\
+\hline
+6 &      0 &      1 &      0 & $\infty$ & 0\\
+\hline
+min &      0 &      0 &      0 &      0\\
+\end{tabular}
+}\hfill
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|}
+\hline
+s11 & 1 & 3 & 4 & 6\\
+\hline
+3 &      4 & $\infty$ &      0 &      1\\
+\hline
+4 &      3 &      0 & $\infty$ &      0\\
+\hline
+5 & $\infty$ &      0 &      3 &      2\\
+\hline
+6 &      0 &      1 &      0 & $\infty$\\
+\hline
+\end{tabular}
+}\captionof*{table}{b11 = b1 + 0 + 0 = 30}
+\end{table}
+
+\newpage
+
+Let us find edge to split on for set: s0\\
+\begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|c|c|}
+\hline
+s0 & 1 & 2 & 3 & 4 & 5 & 6\\
+\hline
+1 & $\infty$ & $\infty$ &      4 &      3 &      1 &      0\\
+\hline
+2 &      0 & $\infty$ &      5 &      4 &      0 &      1\\
+\hline
+3 &      6 &      5 & $\infty$ &      0 &      0 &      1\\
+\hline
+4 &      5 &      4 &      0 & $\infty$ &      3 &      0\\
+\hline
+5 &      3 &      0 &      0 &      3 & $\infty$ &      2\\
+\hline
+6 &      2 &      1 &      1 &      0 &      2 & $\infty$\\
+\hline
+\end{tabular}
+\captionof*{table}{(2,1)}
+\end{flushleft}
+
+
+\begin{table}[ht]
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c|c}
+\hline
+s00 & 1 & 2 & 3 & 4 & 5 & 6 & min\\
+\hline
+1 & $\infty$ & $\infty$ &      4 &      3 &      1 &      0 & 0\\
+\hline
+2 & \cellcolor{yellow}$\infty$ & $\infty$ &      5 &      4 &      0 &      1 & 0\\
+\hline
+3 &      6 &      5 & $\infty$ &      0 &      0 &      1 & 0\\
+\hline
+4 &      5 &      4 &      0 & $\infty$ &      3 &      0 & 0\\
+\hline
+5 &      3 &      0 &      0 &      3 & $\infty$ &      2 & 0\\
+\hline
+6 &      2 &      1 &      1 &      0 &      2 & $\infty$ & 0\\
+\hline
+min &      2 &      0 &      0 &      0 &      0 &      0\\
+\end{tabular}
+}\hfill
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c|}
+\hline
+s00 & 1 & 2 & 3 & 4 & 5 & 6\\
+\hline
+1 & $\infty$ & $\infty$ &      4 &      3 &      1 &      0\\
+\hline
+2 & $\infty$ & $\infty$ &      5 &      4 &      0 &      1\\
+\hline
+3 &      4 &      5 & $\infty$ &      0 &      0 &      1\\
+\hline
+4 &      3 &      4 &      0 & $\infty$ &      3 &      0\\
+\hline
+5 &      1 &      0 &      0 &      3 & $\infty$ &      2\\
+\hline
+6 &      0 &      1 &      1 &      0 &      2 & $\infty$\\
+\hline
+\end{tabular}
+}\captionof*{table}{b00 = b0 + 0 + 2 = 32}
+\end{table}
+
+
+\begin{table}[ht]
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c}
+\hline
+s01 & 2 & 3 & 4 & 5 & 6 & min\\
+\hline
+1 & $\infty$ &      4 &      3 &      1 &      0 & 0\\
+\hline
+3 &      5 & $\infty$ &      0 &      0 &      1 & 0\\
+\hline
+4 &      4 &      0 & $\infty$ &      3 &      0 & 0\\
+\hline
+5 &      0 &      0 &      3 & $\infty$ &      2 & 0\\
+\hline
+6 &      1 &      1 &      0 &      2 & $\infty$ & 0\\
+\hline
+min &      0 &      0 &      0 &      0 &      0\\
+\end{tabular}
+}\hfill
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|}
+\hline
+s01 & 2 & 3 & 4 & 5 & 6\\
+\hline
+1 & $\infty$ &      4 &      3 &      1 &      0\\
+\hline
+3 &      5 & $\infty$ &      0 &      0 &      1\\
+\hline
+4 &      4 &      0 & $\infty$ &      3 &      0\\
+\hline
+5 &      0 &      0 &      3 & $\infty$ &      2\\
+\hline
+6 &      1 &      1 &      0 &      2 & $\infty$\\
+\hline
+\end{tabular}
+}\captionof*{table}{b01 = b0 + 0 + 0 = 30}
+\end{table}
+
+\newpage
+
+Let us find edge to split on for set: s11\\
+\begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|}
+\hline
+s11 & 1 & 3 & 4 & 6\\
+\hline
+3 &      4 & $\infty$ &      0 &      1\\
+\hline
+4 &      3 &      0 & $\infty$ &      0\\
+\hline
+5 & $\infty$ &      0 &      3 &      2\\
+\hline
+6 &      0 &      1 &      0 & $\infty$\\
+\hline
+\end{tabular}
+\captionof*{table}{(6,1)}
+\end{flushleft}
+
+
+\begin{table}[ht]
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c}
+\hline
+s110 & 1 & 3 & 4 & 6 & min\\
+\hline
+3 &      4 & $\infty$ &      0 &      1 & 0\\
+\hline
+4 &      3 &      0 & $\infty$ &      0 & 0\\
+\hline
+5 & $\infty$ &      0 &      3 &      2 & 0\\
+\hline
+6 & \cellcolor{yellow}$\infty$ &      1 &      0 & $\infty$ & 0\\
+\hline
+min &      3 &      0 &      0 &      0\\
+\end{tabular}
+}\hfill
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|}
+\hline
+s110 & 1 & 3 & 4 & 6\\
+\hline
+3 &      1 & $\infty$ &      0 &      1\\
+\hline
+4 &      0 &      0 & $\infty$ &      0\\
+\hline
+5 & $\infty$ &      0 &      3 &      2\\
+\hline
+6 & $\infty$ &      1 &      0 & $\infty$\\
+\hline
+\end{tabular}
+}\captionof*{table}{b110 = b11 + 0 + 3 = 33}
+\end{table}
+
+
+\begin{table}[ht]
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c}
+\hline
+s111 & 3 & 4 & 6 & min\\
+\hline
+3 & $\infty$ &      0 &      1 & 0\\
+\hline
+4 &      0 & $\infty$ &      0 & 0\\
+\hline
+5 &      0 &      3 & \cellcolor{yellow}$\infty$ & 0\\
+\hline
+min &      0 &      0 &      0\\
+\end{tabular}
+}\hfill
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|}
+\hline
+s111 & 3 & 4 & 6\\
+\hline
+3 & $\infty$ &      0 &      1\\
+\hline
+4 &      0 & $\infty$ &      0\\
+\hline
+5 &      0 &      3 & $\infty$\\
+\hline
+\end{tabular}
+}\captionof*{table}{b111 = b11 + 0 + 0 = 30}
+\end{table}
+
+\newpage
+
+
+Let us find edge to split on for set: s01\\
+\begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|c|}
+\hline
+s01 & 2 & 3 & 4 & 5 & 6\\
+\hline
+1 & $\infty$ &      4 &      3 &      1 &      0\\
+\hline
+3 &      5 & $\infty$ &      0 &      0 &      1\\
+\hline
+4 &      4 &      0 & $\infty$ &      3 &      0\\
+\hline
+5 &      0 &      0 &      3 & $\infty$ &      2\\
+\hline
+6 &      1 &      1 &      0 &      2 & $\infty$\\
+\hline
+\end{tabular}
+\captionof*{table}{(1,6)}
+\end{flushleft}
+
+
+\begin{table}[ht]
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c}
+\hline
+s010 & 2 & 3 & 4 & 5 & 6 & min\\
+\hline
+1 & $\infty$ &      4 &      3 &      1 & \cellcolor{yellow}$\infty$ & 1\\
+\hline
+3 &      5 & $\infty$ &      0 &      0 &      1 & 0\\
+\hline
+4 &      4 &      0 & $\infty$ &      3 &      0 & 0\\
+\hline
+5 &      0 &      0 &      3 & $\infty$ &      2 & 0\\
+\hline
+6 &      1 &      1 &      0 &      2 & $\infty$ & 0\\
+\hline
+min &      0 &      0 &      0 &      0 &      0\\
+\end{tabular}
+}\hfill
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|}
+\hline
+s010 & 2 & 3 & 4 & 5 & 6\\
+\hline
+1 & $\infty$ &      3 &      2 &      0 & $\infty$\\
+\hline
+3 &      5 & $\infty$ &      0 &      0 &      1\\
+\hline
+4 &      4 &      0 & $\infty$ &      3 &      0\\
+\hline
+5 &      0 &      0 &      3 & $\infty$ &      2\\
+\hline
+6 &      1 &      1 &      0 &      2 & $\infty$\\
+\hline
+\end{tabular}
+}\captionof*{table}{b010 = b01 + 1 + 0 = 31}
+\end{table}
+
+
+\begin{table}[ht]
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c}
+\hline
+s011 & 2 & 3 & 4 & 5 & min\\
+\hline
+3 &      5 & $\infty$ &      0 &      0 & 0\\
+\hline
+4 &      4 &      0 & $\infty$ &      3 & 0\\
+\hline
+5 &      0 &      0 &      3 & $\infty$ & 0\\
+\hline
+6 & \cellcolor{yellow}$\infty$ &      1 &      0 &      2 & 0\\
+\hline
+min &      0 &      0 &      0 &      0\\
+\end{tabular}
+}\hfill
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|}
+\hline
+s011 & 2 & 3 & 4 & 5\\
+\hline
+3 &      5 & $\infty$ &      0 &      0\\
+\hline
+4 &      4 &      0 & $\infty$ &      3\\
+\hline
+5 &      0 &      0 &      3 & $\infty$\\
+\hline
+6 & $\infty$ &      1 &      0 &      2\\
+\hline
+\end{tabular}
+}\captionof*{table}{b011 = b01 + 0 + 0 = 30}
+\end{table}
+
+\newpage
+
+
+Let us find edge to split on for set: s111\\
+\begin{flushleft}\begin{tabular}[]{|c|c|c|c|}
+\hline
+s111 & 3 & 4 & 6\\
+\hline
+3 & $\infty$ &      0 &      1\\
+\hline
+4 &      0 & $\infty$ &      0\\
+\hline
+5 &      0 &      3 & $\infty$\\
+\hline
+\end{tabular}
+\captionof*{table}{(3,4)}
+\end{flushleft}
+
+
+\begin{table}[ht]
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c}
+\hline
+s1110 & 3 & 4 & 6 & min\\
+\hline
+3 & $\infty$ & \cellcolor{yellow}$\infty$ &      1 & 1\\
+\hline
+4 &      0 & $\infty$ &      0 & 0\\
+\hline
+5 &      0 &      3 & $\infty$ & 0\\
+\hline
+min &      0 &      3 &      0\\
+\end{tabular}
+}\hfill
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|}
+\hline
+s1110 & 3 & 4 & 6\\
+\hline
+3 & $\infty$ & $\infty$ &      0\\
+\hline
+4 &      0 & $\infty$ &      0\\
+\hline
+5 &      0 &      0 & $\infty$\\
+\hline
+\end{tabular}
+}\captionof*{table}{b1110 = b111 + 1 + 3 = 34}
+\end{table}
+
+
+\begin{tabular}[]{|c|c|c|}
+\hline
+s1111 & 3 & 6\\
+\hline
+4 & $\infty$ &      0\\
+\hline
+5 &      0 & $\infty$\\
+\hline
+\end{tabular}
+\captionof*{table}{b1111 = b111 + 0 + 0 = 30}\newpage
+
+
+Let us find edge to split on for set: s011\\
+\begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|}
+\hline
+s011 & 2 & 3 & 4 & 5\\
+\hline
+3 &      5 & $\infty$ &      0 &      0\\
+\hline
+4 &      4 &      0 & $\infty$ &      3\\
+\hline
+5 &      0 &      0 &      3 & $\infty$\\
+\hline
+6 & $\infty$ &      1 &      0 &      2\\
+\hline
+\end{tabular}
+\captionof*{table}{(5,2)}
+\end{flushleft}
+
+
+\begin{table}[ht]
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c}
+\hline
+s0110 & 2 & 3 & 4 & 5 & min\\
+\hline
+3 &      5 & $\infty$ &      0 &      0 & 0\\
+\hline
+4 &      4 &      0 & $\infty$ &      3 & 0\\
+\hline
+5 & \cellcolor{yellow}$\infty$ &      0 &      3 & $\infty$ & 0\\
+\hline
+6 & $\infty$ &      1 &      0 &      2 & 0\\
+\hline
+min &      4 &      0 &      0 &      0\\
+\end{tabular}
+}\hfill
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|}
+\hline
+s0110 & 2 & 3 & 4 & 5\\
+\hline
+3 &      1 & $\infty$ &      0 &      0\\
+\hline
+4 &      0 &      0 & $\infty$ &      3\\
+\hline
+5 & $\infty$ &      0 &      3 & $\infty$\\
+\hline
+6 & $\infty$ &      1 &      0 &      2\\
+\hline
+\end{tabular}
+}\captionof*{table}{b0110 = b011 + 0 + 4 = 34}
+\end{table}
+
+
+\begin{table}[ht]
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c}
+\hline
+s0111 & 3 & 4 & 5 & min\\
+\hline
+3 & $\infty$ &      0 &      0 & 0\\
+\hline
+4 &      0 & $\infty$ &      3 & 0\\
+\hline
+6 &      1 &      0 & \cellcolor{yellow}$\infty$ & 0\\
+\hline
+min &      0 &      0 &      0\\
+\end{tabular}
+}\hfill
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|}
+\hline
+s0111 & 3 & 4 & 5\\
+\hline
+3 & $\infty$ &      0 &      0\\
+\hline
+4 &      0 & $\infty$ &      3\\
+\hline
+6 &      1 &      0 & $\infty$\\
+\hline
+\end{tabular}
+}\captionof*{table}{b0111 = b011 + 0 + 0 = 30}
+\end{table}
+
+\newpage
+
+
+Let us find edge to split on for set: s1111\\
+\begin{flushleft}\begin{tabular}[]{|c|c|c|}
+\hline
+s1111 & 3 & 6\\
+\hline
+4 & $\infty$ &      0\\
+\hline
+5 &      0 & $\infty$\\
+\hline
+\end{tabular}
+\captionof*{table}{}
+\end{flushleft}
+
+
+
+\newpage
+
+
+Let us find edge to split on for set: s0111\\
+\begin{flushleft}\begin{tabular}[]{|c|c|c|c|}
+\hline
+s0111 & 3 & 4 & 5\\
+\hline
+3 & $\infty$ &      0 &      0\\
+\hline
+4 &      0 & $\infty$ &      3\\
+\hline
+6 &      1 &      0 & $\infty$\\
+\hline
+\end{tabular}
+\captionof*{table}{(3,5)}
+\end{flushleft}
+
+
+\begin{table}[ht]
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c}
+\hline
+s01110 & 3 & 4 & 5 & min\\
+\hline
+3 & $\infty$ &      0 & \cellcolor{yellow}$\infty$ & 0\\
+\hline
+4 &      0 & $\infty$ &      3 & 0\\
+\hline
+6 &      1 &      0 & $\infty$ & 0\\
+\hline
+min &      0 &      0 &      3\\
+\end{tabular}
+}\hfill
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|}
+\hline
+s01110 & 3 & 4 & 5\\
+\hline
+3 & $\infty$ &      0 & $\infty$\\
+\hline
+4 &      0 & $\infty$ &      0\\
+\hline
+6 &      1 &      0 & $\infty$\\
+\hline
+\end{tabular}
+}\captionof*{table}{b01110 = b0111 + 0 + 3 = 33}
+\end{table}
+
+
+\begin{tabular}[]{|c|c|c|}
+\hline
+s01111 & 3 & 4\\
+\hline
+4 &      0 & $\infty$\\
+\hline
+6 & $\infty$ &      0\\
+\hline
+\end{tabular}
+\captionof*{table}{b01111 = b0111 + 0 + 0 = 30}\newpage
+
+
+Let us find edge to split on for set: s01111\\
+\begin{flushleft}\begin{tabular}[]{|c|c|c|}
+\hline
+s01111 & 3 & 4\\
+\hline
+4 &      0 & $\infty$\\
+\hline
+6 & $\infty$ &      0\\
+\hline
+\end{tabular}
+\captionof*{table}{}
+\end{flushleft}
+
+
+
+\newpage
+
+
+\end{document}
