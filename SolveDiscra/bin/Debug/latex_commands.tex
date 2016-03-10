@@ -67,27 +67,29 @@
 \end{titlepage}
 
 
+
+
 1. \quad На плоскости задано множество точек $V = {1, 2, 3, 4, 5, 6}$ своими координатами
 $(x = 4,y = 1),(x = 4,y = 3),(x = 2,y = 7),(x = 9,y = 6),(x = 10,y = 7),(x = 6,y = 10)$ \\
 
 \smallskip
 
 2. \quad Вычислим элементы $d_{ij}$ весовой матрицы смежности графа 
-$G = <V, VxV>$ по формуле $dij = |xi - xj|  +  |yi - yj|$
+$G = <V, V*V>$ по формуле $dij = |xi - xj|  +  |yi - yj|$
 
 \begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|c|c|}
 \hline
-$\infty$ &      0 &      6 &      5 &      3 &      2\\
+     0  &      2 &      8 &      10 &     12 &      11\\
 \hline
-	  0 & $\infty$ &      5 &      4 &      0 &      1\\
+      2 &       0 &      6 &      8 &      10 &      9\\
 \hline
-      6 &      5 & $\infty$ &      0 &      0 &      1\\
+      8 &      6 &     0  &      8 &      8  &      7\\
 \hline
-      5 &      4 &      0 & $\infty$ &      3 &      0\\
+      10 &      8 &      8 &     0  &      2 &      7\\
 \hline
-      3 &      0 &      0 &      3 & $\infty$ &      2\\
+      12 &      10 &     8 &     2 &    0 &      7\\
 \hline
-      2 &      1 &      1 &      0 &      2 & $\infty$\\
+      11 &      9 &      7 &      7 &      7 &    0\\
 \hline
 \end{tabular}
 \end{flushleft}
@@ -98,54 +100,29 @@ $\infty$ &      0 &      6 &      5 &      3 &      2\\
  циклов являющихся решением задачи коммивояжера на графе G.
 Петли не могут быть частью решения. Поэтому положим диагональные элементы равными бесконечности.
 
-\begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|c}
+\begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|c|c|}
 \hline
-$\infty$ &      0 &      6 &      5 &      3 &      2\\
+$\infty$&      2 &      8 &      10 &      12 &      11\\
 \hline
-	  0 & $\infty$ &      5 &      4 &      0 &      1\\
+      2 & $\infty$ &      6 &      8 &      10 &      9\\
 \hline
-      6 &      5 & $\infty$ &      0 &      0 &      1\\
+      8 &      6 & $\infty$ &      8 &      8 &      7\\
 \hline
-      5 &      4 &      0 & $\infty$ &      3 &      0\\
+      10 &      8 &      8 & $\infty$ &      2 &      7\\
 \hline
-      3 &      0 &      0 &      3 & $\infty$ &      2\\
+      12 &      10 &      8 &      2 & $\infty$ &      7\\
 \hline
-      2 &      1 &      1 &      0 &      2 & $\infty$ \\
+      11 &      9 &      7 &      7 &      7 & $\infty$\\
 \hline
 \end{tabular}
 \end{flushleft}
 
-Обозначим через 
+Обозначим через
 $ S = \{ p:V \rightarrow V \} (p(l) = l) \& ( \forall j \subset V ) ( \forall j \subset V) ((p(i) = p(j)) \Longrightarrow (i = j))$
 множество кодов всех гамильтоновых циклов $v=(p_1,p_2,p_3,p_4,p_5,p_6,p_1)$ графа G, 
 заданного весовой матрицей смежности D. 
 Здесь $p_{i}$ используется в качестве сокращенной записи $p(i)$.
 Найдем нижнюю границу $b$ множества $S$
-
-\begin{flushleft}
-\begin{tabular}[]{|c|c|c|c|c|c|c|c}
-\hline
-s & 1 & 2 & 3 & 4 & 5 & 6 & min $\alpha$ \\
-\hline
-1 & $\infty$ & $\infty$ &      6 &      5 &      3 &      2 & 2\\
-\hline
-2 &      0 		& $\infty$ &      5 &      4 &      0 &      1 & 0\\
-\hline
-3 &      6 		&      5 & $\infty$ &      0 &      0 &      1 & 0\\
-\hline
-4 &      5 		&      4 &      0 & $\infty$ &      3 &      0 & 0\\
-\hline
-5 &      3 		&      0 &      0 &      3 & $\infty$ &      2 & 0\\
-\hline
-6 &      2 		&      1 &      1 &      0 &      2 & $\infty$ & 0\\
-\hline
-min $\beta$ &  0 	&      0 &      0 &      0 &      0 &      0\\
-\end{tabular}
-\end{flushleft}
-
-$b = \alpha + 	\beta = 28$
-
-\newpage
 
 
 % make the captions stick to the LEFT of the page
@@ -155,6 +132,49 @@ singlelinecheck=false
 
 \captionsetup[subfloat]{labelformat=empty}
 
+
+\begin{table}[ht]
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c|c|c|}
+\hline
+s & 1 & 2 & 3 & 4 & 5 & 6 & min $\alpha$ \\
+\hline
+1     & $\infty$ &      2 &      8 &      10 &      12 &      11  & 2\\
+\hline
+2     &       2 & $\infty$ &      6 &      8 &      10 &      9    &  2\\
+\hline
+3     &       8 &      6 & $\infty$ &      8 &      8 &      7     &  6 \\
+\hline
+4     &       10 &      8 &      8 & $\infty$ &      2 &      7    & 2\\
+\hline
+5     &       12 &      10 &      8 &      2 & $\infty$ &      7  & 2\\
+\hline
+6     &       11 &      9 &      7 &      7 &      7 & $\infty$   & 7 \\
+\hline
+\end{tabular}
+}\hfill
+\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c|c|}
+\hline
+s & 1 & 2 & 3 & 4 & 5 & 6 \\
+\hline
+1     & $\infty$ &      0 &      6 &      8 &      10 &      9 \\
+\hline
+2     &       0 & $\infty$ &      4 &      6 &      8 &      7  \\
+\hline
+3     &       2 &      0 & $\infty$ &      2 &      2 &      1   \\
+\hline
+4     &       8 &      6 &      6 & $\infty$ &      0 &      5 \\
+\hline
+5     &       10 &      8 &      6 &      0 & $\infty$ &      5 \\
+\hline
+6     &       4 &      2 &      0 &      0 &      0 & $\infty$ \\
+\hline
+min $\beta$ &  0 &      0 &      0 &      0 &      0 &     1 \\
+\hline
+\end{tabular}
+}\captionof*{table}{$b = \alpha + 	\beta = 28$}
+\end{table}
+
+\newpage
 
 Определим дугу ветвления для разбиения множества  s\\
 \begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|c|c|}
@@ -677,7 +697,12 @@ s1111 & 3 & 6\\
 5 &      0 & $\infty$\\
 \hline
 \end{tabular}
-\captionof*{table}{b1111 = b111 + 0 + 0 = 30}\newpage
+\captionof*{table}{ b1111 = b111 + 0 + 0 = 30\\ 
+$v = \{ 1,2,5,3,4,6,1 \}$
+}
+
+
+\newpage
 
 
 Определим дугу ветвления для разбиения множества  s011\\
@@ -762,24 +787,6 @@ s0111 & 3 & 4 & 5\\
 \newpage
 
 
-Определим дугу ветвления для разбиения множества  s1111\\
-\begin{flushleft}\begin{tabular}[]{|c|c|c|}
-\hline
-s1111 & 3 & 6\\
-\hline
-4 & $\infty$ &      0\\
-\hline
-5 &      0 & $\infty$\\
-\hline
-\end{tabular}
-\captionof*{table}{}
-\end{flushleft}
-
-
-
-\newpage
-
-
 Определим дугу ветвления для разбиения множества  s0111\\
 \begin{flushleft}\begin{tabular}[]{|c|c|c|c|}
 \hline
@@ -834,25 +841,48 @@ s01111 & 3 & 4\\
 6 & $\infty$ &      0\\
 \hline
 \end{tabular}
-\captionof*{table}{b01111 = b0111 + 0 + 0 = 30}\newpage
+\captionof*{table}{b01111 = b0111 + 0 + 0 = 30\\ 
+$v = \{ 1,6,4,3,5,2,1 \}$
+}
+
+\newpage
 
 
-Определим дугу ветвления для разбиения множества  s01111\\
-\begin{flushleft}\begin{tabular}[]{|c|c|c|}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{var_002}
+\end{figure}
+
+\bigskip
+
+{\large
+Ответ: множество кодов всех оптимальных гамильтоновых циклов являющихся решением задачи коммивояжера на графе G есть $\{1643521, 1253461 \}$. Вес $f_o$ оптимального гамильтонова цикла равен 30.
+}
+
+\newpage
+
+
+4. \quad Найдем приближенное решение задачи коммивояжера $v_1$ с помощью первого алгоритма Кристофидеса. Используя весовую матрицу смежности D графа G , построим кратчайшее связывающее дерево T с помощю алгоритма Прима.
+
+\begin{flushleft}
+\begin{tabular}[]{|c|c|c|c|c|c|c|}
 \hline
-s01111 & 3 & 4\\
+$\infty$ &      0 &      6 &      5 &      3 &      2\\
 \hline
-4 &      0 & $\infty$\\
+	  0 & $\infty$ &      5 &      4 &      0 &      1\\
 \hline
-6 & $\infty$ &      0\\
+      6 &      5 & $\infty$ &      0 &      0 &      1\\
+\hline
+      5 &      4 &      0 & $\infty$ &      3 &      0\\
+\hline
+      3 &      0 &      0 &      3 & $\infty$ &      2\\
+\hline
+      2 &      1 &      1 &      0 &      2 & $\infty$\\
 \hline
 \end{tabular}
-\captionof*{table}{}
 \end{flushleft}
 
 
-
-\newpage
 
 
 \end{document}
