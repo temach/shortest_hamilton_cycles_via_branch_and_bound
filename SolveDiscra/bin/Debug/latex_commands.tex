@@ -1,4 +1,4 @@
-\documentclass[a4paper,10pt]{report} % формат бумаги А4, шрифт по умолчанию - 12pt
+\documentclass[a4paper,10pt]{article} % формат бумаги А4, шрифт по умолчанию - 12pt
 
 % заметь, что в квадратных скобках вводятся необязательные аргументы пакетов.
 % а в фигурных - обязательные
@@ -15,6 +15,7 @@
 \usepackage{graphicx} % пакет для вставки графики, я хз нахуя он нужен в этом документе
 \usepackage{listings} % пакет для вставки кода
 \usepackage[table]{xcolor}% http://ctan.org/pkg/xcolor for coloring the inside of a cell
+\usepackage{colortbl}
 \usepackage[lofdepth,lotdepth]{subfig} % so we can place figures side by side
 
 \usepackage{geometry} % меняю поля страницы
@@ -28,6 +29,10 @@
 
 \renewcommand{\baselinestretch}{1} % меняю ширину между строками на 1.5
 \righthyphenmin=2
+
+
+\definecolor{lightgray}{gray}{0.9}
+
 \begin{document}
 
 
@@ -36,7 +41,7 @@
 
 \begin{center}
 {\large НАЦИОНАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ УНИВЕРСИТЕТ \\
-«ВЫСШАЯ ШКОЛА ЭКОНОМИКИ» 							\\
+«ВЫСШАЯ ШКОЛА ЭКОНОМИКИ» \\
 Дисциплина: «Дискретная математика»}
 
 \vfill % заполняет длину страницы вертикально
@@ -66,7 +71,13 @@
 \end{center}
 \end{titlepage}
 
-
+% my matrix!
+%***,   3,   9,   8,  11,   5
+%  3, ***,   8,   7,   8,   4
+%  9,   8, ***,   3,   8,   4
+%  8,   7,   3, ***,  11,   3
+% 11,   8,   8,  11, ***,  10
+%  5,   4,   4,   3,  10, ***
 
 
 1. \quad На плоскости задано множество точек $V = {1, 2, 3, 4, 5, 6}$ своими координатами
@@ -79,20 +90,21 @@ $G = <V, V*V>$ по формуле $dij = |xi - xj|  +  |yi - yj|$
 
 \begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|c|c|}
 \hline
-     0  &      2 &      8 &      10 &     12 &      11\\
+  0 &    3 &    9 &    8 &   11 &    5 \\
 \hline
-      2 &       0 &      6 &      8 &      10 &      9\\
+  3 &    0 &    8 &    7 &    8 &    4 \\
 \hline
-      8 &      6 &     0  &      8 &      8  &      7\\
+  9 &    8 &    0 &    3 &    8 &    4 \\
 \hline
-      10 &      8 &      8 &     0  &      2 &      7\\
+  8 &    7 &    3 &    0 &   11 &    3 \\
 \hline
-      12 &      10 &     8 &     2 &    0 &      7\\
+ 11 &    8 &    8 &   11 &    0 &   10 \\
 \hline
-      11 &      9 &      7 &      7 &      7 &    0\\
+  5 &    4 &    4 &    3 &   10 &    0 \\
 \hline
 \end{tabular}
 \end{flushleft}
+
 
 \smallskip
 
@@ -102,26 +114,28 @@ $G = <V, V*V>$ по формуле $dij = |xi - xj|  +  |yi - yj|$
 
 \begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|c|c|}
 \hline
-$\infty$&      2 &      8 &      10 &      12 &      11\\
+$\infty$ &    3 &    9 &    8 &   11 &    5 \\
 \hline
-      2 & $\infty$ &      6 &      8 &      10 &      9\\
+  3 &  $\infty$ &    8 &    7 &    8 &    4 \\
 \hline
-      8 &      6 & $\infty$ &      8 &      8 &      7\\
+  9 &    8 &  $\infty$ &    3 &    8 &    4 \\
 \hline
-      10 &      8 &      8 & $\infty$ &      2 &      7\\
+  8 &    7 &    3 &  $\infty$ &   11 &    3 \\
 \hline
-      12 &      10 &      8 &      2 & $\infty$ &      7\\
+ 11 &    8 &    8 &   11 &  $\infty$ &   10 \\
 \hline
-      11 &      9 &      7 &      7 &      7 & $\infty$\\
+  5 &    4 &    4 &    3 &   10 &  $\infty$ \\
 \hline
 \end{tabular}
 \end{flushleft}
+
 
 Обозначим через
 $ S = \{ p:V \rightarrow V \} (p(l) = l) \& ( \forall j \subset V ) ( \forall j \subset V) ((p(i) = p(j)) \Longrightarrow (i = j))$
 множество кодов всех гамильтоновых циклов $v=(p_1,p_2,p_3,p_4,p_5,p_6,p_1)$ графа G, 
 заданного весовой матрицей смежности D. 
 Здесь $p_{i}$ используется в качестве сокращенной записи $p(i)$.
+
 Найдем нижнюю границу $b$ множества $S$
 
 
@@ -138,17 +152,17 @@ singlelinecheck=false
 \hline
 s & 1 & 2 & 3 & 4 & 5 & 6 & min $\alpha$ \\
 \hline
-1     & $\infty$ &      2 &      8 &      10 &      12 &      11  & 2\\
+1     & $\infty$ &    3 &    9 &    8 &   11 &    5 & 3 \\
 \hline
-2     &       2 & $\infty$ &      6 &      8 &      10 &      9    &  2\\
+2     &   3 &  $\infty$ &    8 &    7 &    8 &    4 & 3 \\
 \hline
-3     &       8 &      6 & $\infty$ &      8 &      8 &      7     &  6 \\
+3     &   9 &    8 &  $\infty$ &    3 &    8 &    4 & 3 \\
 \hline
-4     &       10 &      8 &      8 & $\infty$ &      2 &      7    & 2\\
+4     &   8 &    7 &    3 &  $\infty$ &   11 &    3 & 3 \\
 \hline
-5     &       12 &      10 &      8 &      2 & $\infty$ &      7  & 2\\
+5     &  11 &    8 &    8 &   11 &  $\infty$ &   10 & 8 \\
 \hline
-6     &       11 &      9 &      7 &      7 &      7 & $\infty$   & 7 \\
+6     &   5 &    4 &    4 &    3 &   10 &  $\infty$ & 3 \\
 \hline
 \end{tabular}
 }\hfill
@@ -156,22 +170,22 @@ s & 1 & 2 & 3 & 4 & 5 & 6 & min $\alpha$ \\
 \hline
 s & 1 & 2 & 3 & 4 & 5 & 6 \\
 \hline
-1     & $\infty$ &      0 &      6 &      8 &      10 &      9 \\
+1     & $\infty$ &    0 &    6 &    5 &   8 &    2  \\
 \hline
-2     &       0 & $\infty$ &      4 &      6 &      8 &      7  \\
+2     &   0 &  $\infty$ &    5 &    4 &    5 &    1 \\
 \hline
-3     &       2 &      0 & $\infty$ &      2 &      2 &      1   \\
+3     &   6 &    5 &  $\infty$ &    0 &    5 &    1 \\
 \hline
-4     &       8 &      6 &      6 & $\infty$ &      0 &      5 \\
+4     &   5 &    4 &    0 &  $\infty$ &   8 &    0  \\
 \hline
-5     &       10 &      8 &      6 &      0 & $\infty$ &      5 \\
+5     &  3 &    0 &    0 &   3 &  $\infty$ &   2    \\
 \hline
-6     &       4 &      2 &      0 &      0 &      0 & $\infty$ \\
+6     &   2 &    1 &    1 &    0 &   7 &  $\infty$  \\
 \hline
-min $\beta$ &  0 &      0 &      0 &      0 &      0 &     1 \\
+min $\beta$ &  0 &      0 &      0 &      0 &      5 &     0 \\
 \hline
 \end{tabular}
-}\captionof*{table}{$b = \alpha + 	\beta = 28$}
+}\captionof*{table}{$b = \alpha + \beta = 28$}
 \end{table}
 
 \newpage
@@ -849,8 +863,8 @@ $v = \{ 1,6,4,3,5,2,1 \}$
 
 
 \begin{figure}[!h]
-	\centering
-	\includegraphics[scale=0.7]{var_002}
+    \centering
+    \includegraphics[scale=0.7]{var_002}
 \end{figure}
 
 \bigskip
@@ -864,24 +878,202 @@ $v = \{ 1,6,4,3,5,2,1 \}$
 
 4. \quad Найдем приближенное решение задачи коммивояжера $v_1$ с помощью первого алгоритма Кристофидеса. Используя весовую матрицу смежности D графа G , построим кратчайшее связывающее дерево T с помощю алгоритма Прима.
 
-\begin{flushleft}
+\medskip
+
+% dark means == do not take
+
+
+% LINE ONE TABLE ONE
 \begin{tabular}[]{|c|c|c|c|c|c|c|}
 \hline
-$\infty$ &      0 &      6 &      5 &      3 &      2\\
+$\infty$ &    3 &    9 &    8 &   11 &    5 \\
 \hline
-	  0 & $\infty$ &      5 &      4 &      0 &      1\\
+  3 &  $\infty$ &    8 &    7 &    8 &    4 \\
 \hline
-      6 &      5 & $\infty$ &      0 &      0 &      1\\
+  9 &    8 &  $\infty$ &    3 &    8 &    4 \\
 \hline
-      5 &      4 &      0 & $\infty$ &      3 &      0\\
+  8 &    7 &    3 &  $\infty$ &   11 &    3 \\
 \hline
-      3 &      0 &      0 &      3 & $\infty$ &      2\\
+ 11 &    8 &    8 &   11 &  $\infty$ &   10 \\
 \hline
-      2 &      1 &      1 &      0 &      2 & $\infty$\\
+  5 &    4 &    4 &    3 &   10 &  $\infty$ \\
 \hline
 \end{tabular}
-\end{flushleft}
+\hspace{4cm}
+% LINE ONE second TABLE
+\begin{tabular}[]{|c|c|c|c|c|}
+\hline
+\rowcolor{lightgray}     9 &    8 &   11 &    5 \\
+\hline
+ \rowcolor{lightgray}     8 &    7 &    8 &    4 \\
+\hline
+  $\infty$ &    3 &    8 &    4 \\
+\hline
+    3 &  $\infty$ &   11 &    3 \\
+\hline
+    8 &   11 &  $\infty$ &   10 \\
+\hline
+    4 &    3 &   10 &  $\infty$ \\
+\hline
+\end{tabular}
 
+\medskip
+
+% LINE TWO TABLE ONE
+\begin{tabular}[]{|c|c|c|c|c|c|c|}
+\hline
+$\infty$ &    3 &    9 &    8 &   11 &    5 \\
+\hline
+  3 &  $\infty$ &    8 &    7 &    8 &    4 \\
+\hline
+  9 &    8 &  $\infty$ &    3 &    8 &    4 \\
+\hline
+  8 &    7 &    3 &  $\infty$ &   11 &    3 \\
+\hline
+ 11 &    8 &    8 &   11 &  $\infty$ &   10 \\
+\hline
+  5 &    4 &    4 &    3 &   10 &  $\infty$ \\
+\hline
+\end{tabular}
+\hspace{4cm}
+% LINE TWO second TABLE
+\begin{tabular}[]{|c|c|c|c|c|c|c|}
+\hline
+$\infty$ &    3 &    9 &    8 &   11 &    5 \\
+\hline
+  3 &  $\infty$ &    8 &    7 &    8 &    4 \\
+\hline
+  9 &    8 &  $\infty$ &    3 &    8 &    4 \\
+\hline
+  8 &    7 &    3 &  $\infty$ &   11 &    3 \\
+\hline
+ 11 &    8 &    8 &   11 &  $\infty$ &   10 \\
+\hline
+  5 &    4 &    4 &    3 &   10 &  $\infty$ \\
+\hline
+\end{tabular}
+
+\medskip
+
+% LINE THREE TABLE ONE
+\begin{tabular}[]{|c|c|c|c|c|c|c|}
+\hline
+$\infty$ &    3 &    9 &    8 &   11 &    5 \\
+\hline
+  3 &  $\infty$ &    8 &    7 &    8 &    4 \\
+\hline
+  9 &    8 &  $\infty$ &    3 &    8 &    4 \\
+\hline
+  8 &    7 &    3 &  $\infty$ &   11 &    3 \\
+\hline
+ 11 &    8 &    8 &   11 &  $\infty$ &   10 \\
+\hline
+  5 &    4 &    4 &    3 &   10 &  $\infty$ \\
+\hline
+\end{tabular}
+\hspace{4cm}
+% LINE THREE second TABLE
+\begin{tabular}[]{|c|c|c|c|c|c|c|}
+\hline
+$\infty$ &    3 &    9 &    8 &   11 &    5 \\
+\hline
+  3 &  $\infty$ &    8 &    7 &    8 &    4 \\
+\hline
+  9 &    8 &  $\infty$ &    3 &    8 &    4 \\
+\hline
+  8 &    7 &    3 &  $\infty$ &   11 &    3 \\
+\hline
+ 11 &    8 &    8 &   11 &  $\infty$ &   10 \\
+\hline
+  5 &    4 &    4 &    3 &   10 &  $\infty$ \\
+\hline
+\end{tabular}
+
+\medskip
+
+% LINE FOUR TABLE ONE
+\begin{tabular}[]{|c|c|c|c|c|c|c|}
+\hline
+$\infty$ &    3 &    9 &    8 &   11 &    5 \\
+\hline
+  3 &  $\infty$ &    8 &    7 &    8 &    4 \\
+\hline
+  9 &    8 &  $\infty$ &    3 &    8 &    4 \\
+\hline
+  8 &    7 &    3 &  $\infty$ &   11 &    3 \\
+\hline
+ 11 &    8 &    8 &   11 &  $\infty$ &   10 \\
+\hline
+  5 &    4 &    4 &    3 &   10 &  $\infty$ \\
+\hline
+\end{tabular}
+\hspace{4cm}
+% LINE FOUR second TABLE
+\begin{tabular}[]{|c|c|c|c|c|c|c|}
+\hline
+$\infty$ &    3 &    9 &    8 &   11 &    5 \\
+\hline
+  3 &  $\infty$ &    8 &    7 &    8 &    4 \\
+\hline
+  9 &    8 &  $\infty$ &    3 &    8 &    4 \\
+\hline
+  8 &    7 &    3 &  $\infty$ &   11 &    3 \\
+\hline
+ 11 &    8 &    8 &   11 &  $\infty$ &   10 \\
+\hline
+  5 &    4 &    4 &    3 &   10 &  $\infty$ \\
+\hline
+\end{tabular}
+
+\bigskip
+
+$E(T) = \{ (1,2), (2,6), (6,4), (4,3),(2,5) \} $ \\
+Вес дерева 
+$f(T) = \sum_{(i,j) \in E(T)} d_{ij}  = \sum_{i=1}^{6} \lambda_i = 17 $
+
+\medskip
+
+В графе с удвоенным числом ребер дерева \\
+$ E(T) || E(T) = \{ 
+ (1,2), (2,6), (6,4),(4,3),(2,5)
+,(2,1), (6,2), (4,6),(3,4),(5,2)
+\}$ \\
+Построим Эйлеров цикл $\mu = (1,2,5,2,6,4,3,4,6,2,1)$. \\
+Удалим повторения вершин в Эйлеровом цикле для получения приближенного решения $v_1 = (1,2,5,6,4,3,1)$. 
+
+\smallskip 
+
+Вес полученного гамильтонова цикла равен 
+$f(v_1) = 3 + 8 + 10 + 3 + 3 + 9 = 36 $
+
+Вычислим относительную точность полученного решения
+$ \epsilon = \frac{f(v_1) - f(v_0)}{f(v_0)} = \frac{36 - 30}{30} = 0.2 $
+
+\smallskip
+
+Таким образом найдено приближенное решение задачи коммивояжора.
+
+\bigskip
+
+5. \qquad Найдем приближенное решение задачи коммивояжора $v_2$ с помощю второго алгоритма Кристофидеса.
+Кратчайшее связывающие дерево имеет ребра
+$E(T) = \{ (1,2), (2,6), (6,4), (4,3),(2,5) \}  $
+
+В дереве четыре вершины нечетной степени 1,2,5,3. \\
+В оптимальное паросочетание $E(M) = \{(2,1), (5,3)\}$ входит два ребра.
+Строим Эйлеров цикл в графе со множеством ребер \\
+$E(T) || E(M) = \{ (2,1),(5,3),(1,2),(2,6), (6,4), (4,3),(2,5) \} $
+
+\smallskip 
+
+Полученный эйлеров цикл является одновременно и гамильтоновым
+$v_2 = \mu = (1,2,5,3,4,6,1) $ \\
+Вес цикла $f(v_2) = 30$. \\
+Относительная точность решения $ \epsilon = \frac{f(v_1) - f(v_0)}{f(v_0)} = \frac{30 - 30}{30} = 0$ \\
+
+\smallskip
+
+Таким образом вторым алгоритмом найдено точное решение.
 
 
 
