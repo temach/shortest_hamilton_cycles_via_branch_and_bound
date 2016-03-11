@@ -47,12 +47,16 @@
 
 \vfill % заполняет длину страницы вертикально
 
-{\large Домашнее задание 1}
+{\large Домашнее задание 3}
 
 \bigskip
 
-%\underline{ Исследование алгоритмов решения \\ метрической задачи коммивояжера \\ }
-Вариант 002\\
+\underline{ Исследование алгоритмов решения} \\
+\underline{ метрической задачи коммивояжера} \\
+
+\bigskip
+
+Вариант 002 \\
 
 \vfill
 
@@ -149,9 +153,9 @@ singlelinecheck=false
 
 
 \begin{table}[ht]
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c|c|c|}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c|c|c|c|c|}
 \hline
-s & 1 & 2 & 3 & 4 & 5 & 6 & min $\alpha$ \\
+\rowcolor{lightgray}  s & 1 & 2 & 3 & 4 & 5 & 6 & min $\alpha$ \\
 \hline
 1     & $\infty$ &    3 &    9 &    8 &   11 &    5 & 3 \\
 \hline
@@ -167,7 +171,7 @@ s & 1 & 2 & 3 & 4 & 5 & 6 & min $\alpha$ \\
 \hline
 \end{tabular}
 }\hfill
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c|c|}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c|c|c|c|}
 \hline
 s & 1 & 2 & 3 & 4 & 5 & 6 \\
 \hline
@@ -192,9 +196,9 @@ min $\beta$ &  0 &      0 &      0 &      0 &      5 &     0 \\
 \newpage
 
 Определим дугу ветвления для разбиения множества  s\\
-\begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|c|c|}
+\begin{flushleft}\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c|c|c|}
 \hline
-s & 1 & 2 & 3 & 4 & 5 & 6\\
+\rowcolor{lightgray} s & 1 & 2 & 3 & 4 & 5 & 6\\
 \hline
 1 & $\infty$ &      0 &      6 &      5 &      3 &      2\\
 \hline
@@ -214,9 +218,9 @@ s & 1 & 2 & 3 & 4 & 5 & 6\\
 
 
 \begin{table}[ht]
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c|c}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c|c|c|c}
 \hline
-s0 & 1 & 2 & 3 & 4 & 5 & 6 & min\\
+\rowcolor{lightgray}  s0 & 1 & 2 & 3 & 4 & 5 & 6 & min\\
 \hline
 1 & $\infty$ & \cellcolor{yellow}$\infty$ &      6 &      5 &      3 &      2 & 2\\
 \hline
@@ -233,9 +237,9 @@ s0 & 1 & 2 & 3 & 4 & 5 & 6 & min\\
 min &      0 &      0 &      0 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c|}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c|c|c|}
 \hline
-s0 & 1 & 2 & 3 & 4 & 5 & 6\\
+\rowcolor{lightgray}  s0 & 1 & 2 & 3 & 4 & 5 & 6\\
 \hline
 1 & $\infty$ & $\infty$ &      4 &      3 &      1 &      0\\
 \hline
@@ -255,9 +259,9 @@ s0 & 1 & 2 & 3 & 4 & 5 & 6\\
 
 
 \begin{table}[ht]
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c|c|c}
 \hline
-s1 & 1 & 3 & 4 & 5 & 6 & min\\
+\rowcolor{lightgray}  s1 & 1 & 3 & 4 & 5 & 6 & min\\
 \hline
 2 & \cellcolor{yellow}$\infty$ &      5 &      4 &      0 &      1 & 0\\
 \hline
@@ -272,9 +276,9 @@ s1 & 1 & 3 & 4 & 5 & 6 & min\\
 min &      2 &      0 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c|c|}
 \hline
-s1 & 1 & 3 & 4 & 5 & 6\\
+\rowcolor{lightgray}  s1 & 1 & 3 & 4 & 5 & 6\\
 \hline
 2 & $\infty$ &      5 &      4 &      0 &      1\\
 \hline
@@ -293,9 +297,9 @@ s1 & 1 & 3 & 4 & 5 & 6\\
 \newpage
 
 Определим дугу ветвления для разбиения множества  s1\\
-\begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|c|}
+\begin{flushleft}\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c|c|}
 \hline
-s1 & 1 & 3 & 4 & 5 & 6\\
+\rowcolor{lightgray}  s1 & 1 & 3 & 4 & 5 & 6\\
 \hline
 2 & $\infty$ &      5 &      4 &      0 &      1\\
 \hline
@@ -313,9 +317,9 @@ s1 & 1 & 3 & 4 & 5 & 6\\
 
 
 \begin{table}[ht]
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c|c|c}
 \hline
-s10 & 1 & 3 & 4 & 5 & 6 & min\\
+\rowcolor{lightgray}  s10 & 1 & 3 & 4 & 5 & 6 & min\\
 \hline
 2 & $\infty$ &      5 &      4 & \cellcolor{yellow}$\infty$ &      1 & 1\\
 \hline
@@ -330,9 +334,9 @@ s10 & 1 & 3 & 4 & 5 & 6 & min\\
 min &      0 &      0 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c|c|}
 \hline
-s10 & 1 & 3 & 4 & 5 & 6\\
+\rowcolor{lightgray}  s10 & 1 & 3 & 4 & 5 & 6\\
 \hline
 2 & $\infty$ &      4 &      3 & $\infty$ &      0\\
 \hline
@@ -350,9 +354,9 @@ s10 & 1 & 3 & 4 & 5 & 6\\
 
 
 \begin{table}[ht]
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c|c}
 \hline
-s11 & 1 & 3 & 4 & 6 & min\\
+\rowcolor{lightgray}  s11 & 1 & 3 & 4 & 6 & min\\
 \hline
 3 &      4 & $\infty$ &      0 &      1 & 0\\
 \hline
@@ -365,9 +369,9 @@ s11 & 1 & 3 & 4 & 6 & min\\
 min &      0 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c|}
 \hline
-s11 & 1 & 3 & 4 & 6\\
+\rowcolor{lightgray}  s11 & 1 & 3 & 4 & 6\\
 \hline
 3 &      4 & $\infty$ &      0 &      1\\
 \hline
@@ -384,9 +388,9 @@ s11 & 1 & 3 & 4 & 6\\
 \newpage
 
 Определим дугу ветвления для разбиения множества  s0\\
-\begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|c|c|}
+\begin{flushleft}\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c|c|c|}
 \hline
-s0 & 1 & 2 & 3 & 4 & 5 & 6\\
+\rowcolor{lightgray}  s0 & 1 & 2 & 3 & 4 & 5 & 6\\
 \hline
 1 & $\infty$ & $\infty$ &      4 &      3 &      1 &      0\\
 \hline
@@ -406,9 +410,9 @@ s0 & 1 & 2 & 3 & 4 & 5 & 6\\
 
 
 \begin{table}[ht]
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c|c}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c|c|c|c}
 \hline
-s00 & 1 & 2 & 3 & 4 & 5 & 6 & min\\
+\rowcolor{lightgray}  s00 & 1 & 2 & 3 & 4 & 5 & 6 & min\\
 \hline
 1 & $\infty$ & $\infty$ &      4 &      3 &      1 &      0 & 0\\
 \hline
@@ -425,9 +429,9 @@ s00 & 1 & 2 & 3 & 4 & 5 & 6 & min\\
 min &      2 &      0 &      0 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c|}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c|c|c|}
 \hline
-s00 & 1 & 2 & 3 & 4 & 5 & 6\\
+\rowcolor{lightgray}  s00 & 1 & 2 & 3 & 4 & 5 & 6\\
 \hline
 1 & $\infty$ & $\infty$ &      4 &      3 &      1 &      0\\
 \hline
@@ -447,9 +451,9 @@ s00 & 1 & 2 & 3 & 4 & 5 & 6\\
 
 
 \begin{table}[ht]
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c|c|c}
 \hline
-s01 & 2 & 3 & 4 & 5 & 6 & min\\
+\rowcolor{lightgray}  s01 & 2 & 3 & 4 & 5 & 6 & min\\
 \hline
 1 & $\infty$ &      4 &      3 &      1 &      0 & 0\\
 \hline
@@ -464,9 +468,9 @@ s01 & 2 & 3 & 4 & 5 & 6 & min\\
 min &      0 &      0 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c|c|}
 \hline
-s01 & 2 & 3 & 4 & 5 & 6\\
+\rowcolor{lightgray}  s01 & 2 & 3 & 4 & 5 & 6\\
 \hline
 1 & $\infty$ &      4 &      3 &      1 &      0\\
 \hline
@@ -485,9 +489,9 @@ s01 & 2 & 3 & 4 & 5 & 6\\
 \newpage
 
 Определим дугу ветвления для разбиения множества  s11\\
-\begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|}
+\begin{flushleft}\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c|}
 \hline
-s11 & 1 & 3 & 4 & 6\\
+\rowcolor{lightgray}  s11 & 1 & 3 & 4 & 6\\
 \hline
 3 &      4 & $\infty$ &      0 &      1\\
 \hline
@@ -503,9 +507,9 @@ s11 & 1 & 3 & 4 & 6\\
 
 
 \begin{table}[ht]
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c|c}
 \hline
-s110 & 1 & 3 & 4 & 6 & min\\
+\rowcolor{lightgray}  s110 & 1 & 3 & 4 & 6 & min\\
 \hline
 3 &      4 & $\infty$ &      0 &      1 & 0\\
 \hline
@@ -518,9 +522,9 @@ s110 & 1 & 3 & 4 & 6 & min\\
 min &      3 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c|}
 \hline
-s110 & 1 & 3 & 4 & 6\\
+\rowcolor{lightgray}  s110 & 1 & 3 & 4 & 6\\
 \hline
 3 &      1 & $\infty$ &      0 &      1\\
 \hline
@@ -536,9 +540,9 @@ s110 & 1 & 3 & 4 & 6\\
 
 
 \begin{table}[ht]
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c}
 \hline
-s111 & 3 & 4 & 6 & min\\
+\rowcolor{lightgray}  s111 & 3 & 4 & 6 & min\\
 \hline
 3 & $\infty$ &      0 &      1 & 0\\
 \hline
@@ -549,9 +553,9 @@ s111 & 3 & 4 & 6 & min\\
 min &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|}
 \hline
-s111 & 3 & 4 & 6\\
+\rowcolor{lightgray}  s111 & 3 & 4 & 6\\
 \hline
 3 & $\infty$ &      0 &      1\\
 \hline
@@ -567,9 +571,9 @@ s111 & 3 & 4 & 6\\
 
 
 Определим дугу ветвления для разбиения множества  s01\\
-\begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|c|}
+\begin{flushleft}\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c|c|}
 \hline
-s01 & 2 & 3 & 4 & 5 & 6\\
+\rowcolor{lightgray}  s01 & 2 & 3 & 4 & 5 & 6\\
 \hline
 1 & $\infty$ &      4 &      3 &      1 &      0\\
 \hline
@@ -587,9 +591,9 @@ s01 & 2 & 3 & 4 & 5 & 6\\
 
 
 \begin{table}[ht]
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c|c|c}
 \hline
-s010 & 2 & 3 & 4 & 5 & 6 & min\\
+\rowcolor{lightgray}  s010 & 2 & 3 & 4 & 5 & 6 & min\\
 \hline
 1 & $\infty$ &      4 &      3 &      1 & \cellcolor{yellow}$\infty$ & 1\\
 \hline
@@ -604,9 +608,9 @@ s010 & 2 & 3 & 4 & 5 & 6 & min\\
 min &      0 &      0 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c|c|}
 \hline
-s010 & 2 & 3 & 4 & 5 & 6\\
+\rowcolor{lightgray}  s010 & 2 & 3 & 4 & 5 & 6\\
 \hline
 1 & $\infty$ &      3 &      2 &      0 & $\infty$\\
 \hline
@@ -624,9 +628,9 @@ s010 & 2 & 3 & 4 & 5 & 6\\
 
 
 \begin{table}[ht]
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c|c}
 \hline
-s011 & 2 & 3 & 4 & 5 & min\\
+\rowcolor{lightgray}  s011 & 2 & 3 & 4 & 5 & min\\
 \hline
 3 &      5 & $\infty$ &      0 &      0 & 0\\
 \hline
@@ -639,9 +643,9 @@ s011 & 2 & 3 & 4 & 5 & min\\
 min &      0 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c|}
 \hline
-s011 & 2 & 3 & 4 & 5\\
+\rowcolor{lightgray}  s011 & 2 & 3 & 4 & 5\\
 \hline
 3 &      5 & $\infty$ &      0 &      0\\
 \hline
@@ -659,9 +663,9 @@ s011 & 2 & 3 & 4 & 5\\
 
 
 Определим дугу ветвления для разбиения множества  s111\\
-\begin{flushleft}\begin{tabular}[]{|c|c|c|c|}
+\begin{flushleft}\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|}
 \hline
-s111 & 3 & 4 & 6\\
+\rowcolor{lightgray}  s111 & 3 & 4 & 6\\
 \hline
 3 & $\infty$ &      0 &      1\\
 \hline
@@ -675,9 +679,9 @@ s111 & 3 & 4 & 6\\
 
 
 \begin{table}[ht]
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c}
 \hline
-s1110 & 3 & 4 & 6 & min\\
+\rowcolor{lightgray}  s1110 & 3 & 4 & 6 & min\\
 \hline
 3 & $\infty$ & \cellcolor{yellow}$\infty$ &      1 & 1\\
 \hline
@@ -688,9 +692,9 @@ s1110 & 3 & 4 & 6 & min\\
 min &      0 &      3 &      0\\
 \end{tabular}
 }\hfill
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|}
 \hline
-s1110 & 3 & 4 & 6\\
+\rowcolor{lightgray}  s1110 & 3 & 4 & 6\\
 \hline
 3 & $\infty$ & $\infty$ &      0\\
 \hline
@@ -703,9 +707,9 @@ s1110 & 3 & 4 & 6\\
 \end{table}
 
 
-\begin{tabular}[]{|c|c|c|}
+\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|}
 \hline
-s1111 & 3 & 6\\
+\rowcolor{lightgray}  s1111 & 3 & 6\\
 \hline
 4 & \cellcolor{yellow}$\infty$ &      0\\
 \hline
@@ -721,9 +725,9 @@ $v = \{ 1,2,5,3,4,6,1 \}$
 
 
 Определим дугу ветвления для разбиения множества  s011\\
-\begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|}
+\begin{flushleft}\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c|}
 \hline
-s011 & 2 & 3 & 4 & 5\\
+\rowcolor{lightgray}  s011 & 2 & 3 & 4 & 5\\
 \hline
 3 &      5 & $\infty$ &      0 &      0\\
 \hline
@@ -739,9 +743,9 @@ s011 & 2 & 3 & 4 & 5\\
 
 
 \begin{table}[ht]
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c|c}
 \hline
-s0110 & 2 & 3 & 4 & 5 & min\\
+\rowcolor{lightgray}  s0110 & 2 & 3 & 4 & 5 & min\\
 \hline
 3 &      5 & $\infty$ &      0 &      0 & 0\\
 \hline
@@ -754,9 +758,9 @@ s0110 & 2 & 3 & 4 & 5 & min\\
 min &      4 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c|}
 \hline
-s0110 & 2 & 3 & 4 & 5\\
+\rowcolor{lightgray}  s0110 & 2 & 3 & 4 & 5\\
 \hline
 3 &      1 & $\infty$ &      0 &      0\\
 \hline
@@ -772,9 +776,9 @@ s0110 & 2 & 3 & 4 & 5\\
 
 
 \begin{table}[ht]
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c}
 \hline
-s0111 & 3 & 4 & 5 & min\\
+\rowcolor{lightgray}  s0111 & 3 & 4 & 5 & min\\
 \hline
 3 & $\infty$ &      0 &      0 & 0\\
 \hline
@@ -785,9 +789,9 @@ s0111 & 3 & 4 & 5 & min\\
 min &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|}
 \hline
-s0111 & 3 & 4 & 5\\
+\rowcolor{lightgray}  s0111 & 3 & 4 & 5\\
 \hline
 3 & $\infty$ &      0 &      0\\
 \hline
@@ -803,9 +807,9 @@ s0111 & 3 & 4 & 5\\
 
 
 Определим дугу ветвления для разбиения множества  s0111\\
-\begin{flushleft}\begin{tabular}[]{|c|c|c|c|}
+\begin{flushleft}\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|}
 \hline
-s0111 & 3 & 4 & 5\\
+\rowcolor{lightgray}  s0111 & 3 & 4 & 5\\
 \hline
 3 & $\infty$ &      0 &      0\\
 \hline
@@ -819,9 +823,9 @@ s0111 & 3 & 4 & 5\\
 
 
 \begin{table}[ht]
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|c}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|c}
 \hline
-s01110 & 3 & 4 & 5 & min\\
+\rowcolor{lightgray}  s01110 & 3 & 4 & 5 & min\\
 \hline
 3 & $\infty$ &      0 & \cellcolor{yellow}$\infty$ & 0\\
 \hline
@@ -832,9 +836,9 @@ s01110 & 3 & 4 & 5 & min\\
 min &      0 &      0 &      3\\
 \end{tabular}
 }\hfill
-\subfloat[][]{\begin{tabular}[]{|c|c|c|c|}
+\subfloat[][]{\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|c|}
 \hline
-s01110 & 3 & 4 & 5\\
+\rowcolor{lightgray}  s01110 & 3 & 4 & 5\\
 \hline
 3 & $\infty$ &      0 & $\infty$\\
 \hline
@@ -847,9 +851,9 @@ s01110 & 3 & 4 & 5\\
 \end{table}
 
 
-\begin{tabular}[]{|c|c|c|}
+\begin{tabular}[]{|>{\columncolor[gray]{0.9}}c|c|c|}
 \hline
-s01111 & 3 & 4\\
+\rowcolor{lightgray}  s01111 & 3 & 4\\
 \hline
 4 &      0 & $\infty$\\
 \hline
@@ -977,12 +981,12 @@ $\infty$ &    \cellcolor{yellow}3 &    9 &    8 &   11 &    5 \\
 
 Рассмотрим матрицу смежности графа. \\
 
-Возьмем реберо (1,2)  с наименьшим весом 3 и выкинем из таблицы колонки 1, 2. 
+Возьмем реберо (1,2)  с наименьшим весом 3 и исключим из таблицы колонки 1, 2. 
 Будем искать наименьшее ребро исходящее из вершин 1 или 2.  \\
-Это ребро (2,6) с весом 4. Добавим его в дерево и выкинем из таблицы колонку 6. Найдем наименьшее ребро исходящее из вершин 1, 2 или 6. \\
-Это ребро (6,4) с весом 3. Добавим его в дерево и выкинем из таблицы колонку 4. Найдем наименьшее ребро исходящее из вершин 1, 2 ,6 или 4. \\
-Это ребро (4,3) с весом 3. Добавим его в дерево и выкинем из таблицы колонку 3. Найдем наименьшее ребро исходящее из вершин 1, 2, 6, 4, 3.\\
-Это ребро (2,5) с весом 8. Добавим его в дерево и выкинем из таблицы колонку 5. \\
+Это ребро (2,6) с весом 4. Добавим его в дерево и исключим из таблицы колонку 6. Найдем наименьшее ребро исходящее из вершин 1, 2 или 6. \\
+Это ребро (6,4) с весом 3. Добавим его в дерево и исключим из таблицы колонку 4. Найдем наименьшее ребро исходящее из вершин 1, 2 ,6 или 4. \\
+Это ребро (4,3) с весом 3. Добавим его в дерево и исключим из таблицы колонку 3. Найдем наименьшее ребро исходящее из вершин 1, 2, 6, 4, 3.\\
+Это ребро (2,5) с весом 8. Добавим его в дерево и исключим из таблицы колонку 5. \\
 
 Следовательно кратчайшее связывающее дерево
 $E(T) = \{ (1,2), (2,6), (6,4), (4,3),(2,5) \} $ \\
@@ -1014,7 +1018,7 @@ $ \epsilon = \frac{f(v_1) - f(v_0)}{f(v_0)} = \frac{36 - 30}{30} = 0.2 $
 
 \bigskip
 
-5. \qquad Найдем приближенное решение задачи коммивояжора $v_2$ с помощю второго алгоритма Кристофидеса.
+5. \quad Найдем приближенное решение задачи коммивояжора $v_2$ с помощю второго алгоритма Кристофидеса.
 Кратчайшее связывающие дерево имеет ребра
 $E(T) = \{ (1,2), (2,6), (6,4), (4,3),(2,5) \}  $
 
