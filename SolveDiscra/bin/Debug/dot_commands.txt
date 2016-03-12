@@ -1,55 +1,133 @@
 digraph G {
 
-"s\nw=28\n(1,2)"->"s1\nw=30\n(2,5)";
-"s\nw=28\n(1,2)"->"s0\nw=30\n(2,1)";
+"s\nweight=22;edge=(1,2)\n"->"s1\nweight=28;edge=(4,5)\n";
+"s\nweight=22;edge=(1,2)\n"->"s0\nweight=28;edge=(2,1)\n";
 
-"s1\nw=30\n(2,5)"->"s11\nw=30\n(6,1)";
-"s1\nw=30\n(2,5)"->"s10\nw=31";
+"s1\nweight=28;edge=(4,5)\n"->"s11\nweight=32;edge=(2,3)\n";
+"s1\nweight=28;edge=(4,5)\n"->"s10\nweight=32;edge=(5,4)\n";
 
-"s0\nw=30\n(2,1)"->"s01\nw=30\n(1,6)";
-"s0\nw=30\n(2,1)"->"s00\nw=32";
+"s0\nweight=28;edge=(2,1)\n"->"s01\nweight=28;edge=(4,5)\n";
+"s0\nweight=28;edge=(2,1)\n"->"s00\nweight=34;edge=(4,5)\n";
 
-"s11\nw=30\n(6,1)"->"s111\nw=30\n(3,4)";
-"s11\nw=30\n(6,1)"->"s110\nw=33";
+"s11\nweight=32;edge=(2,3)\n"->"s111\nweight=34;edge=(3,6)\n";
+"s11\nweight=32;edge=(2,3)\n"->"s110\nweight=34;edge=(3,1)\n";
 
-"s10\nw=31";
-"s10\nw=31";
+"s10\nweight=32;edge=(5,4)\n"->"s101\nweight=32;edge=(2,3)\n";
+"s10\nweight=32;edge=(5,4)\n"->"s100\nweight=36;\n";
 
-"s01\nw=30\n(1,6)"->"s011\nw=30\n(5,2)";
-"s01\nw=30\n(1,6)"->"s010\nw=31";
+"s01\nweight=28;edge=(4,5)\n"->"s011\nweight=32;edge=(1,3)\n";
+"s01\nweight=28;edge=(4,5)\n"->"s010\nweight=32;edge=(5,4)\n";
 
-"s00\nw=32";
-"s00\nw=32";
+"s00\nweight=34;edge=(4,5)\n"->"s001\nweight=38;\n";
+"s00\nweight=34;edge=(4,5)\n"->"s000\nweight=38;\n";
 
-"s111\nw=30\n(3,4)"->"s1111\nw=30\nv=125346";
-"s111\nw=30\n(3,4)"->"s1110\nw=34";
+"s011\nweight=32;edge=(1,3)\n"->"s0111\nweight=34;edge=(3,6)\n";
+"s011\nweight=32;edge=(1,3)\n"->"s0110\nweight=34;edge=(3,2)\n";
 
-"s110\nw=33";
-"s110\nw=33";
+"s010\nweight=32;edge=(5,4)\n"->"s0101\nweight=32;edge=(1,3)\n";
+"s010\nweight=32;edge=(5,4)\n"->"s0100\nweight=36;\n";
 
-"s011\nw=30\n(5,2)"->"s0111\nw=30\n(3,5)";
-"s011\nw=30\n(5,2)"->"s0110\nw=34";
+"s111\nweight=34;edge=(3,6)\n"->"s1111\nweight=36;\n";
+"s111\nweight=34;edge=(3,6)\n"->"s1110\nweight=36;\n";
 
-"s010\nw=31";
-"s010\nw=31";
+"s110\nweight=34;edge=(3,1)\n"->"s1101\nweight=34;edge=(5,6)\n";
+"s110\nweight=34;edge=(3,1)\n"->"s1100\nweight=36;\n";
 
-"s1111\nw=30\nv=125346";
-"s1111\nw=30\nv=125346";
+"s101\nweight=32;edge=(2,3)\n"->"s1011\nweight=34;edge=(3,6)\n";
+"s101\nweight=32;edge=(2,3)\n"->"s1010\nweight=34;edge=(2,6)\n";
 
-"s1110\nw=34";
-"s1110\nw=34";
+"s100\nweight=36;\n";
+"s100\nweight=36;\n";
 
-"s0111\nw=30\n(3,5)"->"s01111\nw=30\nv=164352";
-"s0111\nw=30\n(3,5)"->"s01110\nw=33";
+"s0111\nweight=34;edge=(3,6)\n"->"s01111\nweight=36;\n";
+"s0111\nweight=34;edge=(3,6)\n"->"s01110\nweight=36;\n";
 
-"s0110\nw=34";
-"s0110\nw=34";
+"s0110\nweight=34;edge=(3,2)\n"->"s01101\nweight=34;edge=(5,6)\n";
+"s0110\nweight=34;edge=(3,2)\n"->"s01100\nweight=36;\n";
 
-"s01111\nw=30\nv=164352";
-"s01111\nw=30\nv=164352";
+"s0101\nweight=32;edge=(1,3)\n"->"s01011\nweight=34;edge=(3,6)\n";
+"s0101\nweight=32;edge=(1,3)\n"->"s01010\nweight=34;edge=(1,6)\n";
 
-"s01110\nw=33";
-"s01110\nw=33";
+"s0100\nweight=36;\n";
+"s0100\nweight=36;\n";
+
+"s1011\nweight=34;edge=(3,6)\n"->"s10111\nweight=34;\npath=123654";
+"s1011\nweight=34;edge=(3,6)\n"->"s10110\nweight=36;\n";
+
+"s1010\nweight=34;edge=(2,6)\n"->"s10101\nweight=36;\n";
+"s1010\nweight=34;edge=(2,6)\n"->"s10100\nweight=36;\n";
+
+"s01011\nweight=34;edge=(3,6)\n"->"s010111\nweight=34;\npath=213654";
+"s01011\nweight=34;edge=(3,6)\n"->"s010110\nweight=36;\n";
+
+"s01010\nweight=34;edge=(1,6)\n"->"s010101\nweight=36;\n";
+"s01010\nweight=34;edge=(1,6)\n"->"s010100\nweight=36;\n";
+
+"s001\nweight=38;\n";
+"s001\nweight=38;\n";
+
+"s000\nweight=38;\n";
+"s000\nweight=38;\n";
+
+"s1111\nweight=36;\n";
+"s1111\nweight=36;\n";
+
+"s1110\nweight=36;\n";
+"s1110\nweight=36;\n";
+
+"s1101\nweight=34;edge=(5,6)\n"->"s11011\nweight=34;\npath=124563";
+"s1101\nweight=34;edge=(5,6)\n"->"s11010\nweight=36;\n";
+
+"s1100\nweight=36;\n";
+"s1100\nweight=36;\n";
+
+"s01111\nweight=36;\n";
+"s01111\nweight=36;\n";
+
+"s01110\nweight=36;\n";
+"s01110\nweight=36;\n";
+
+"s01101\nweight=34;edge=(5,6)\n"->"s011011\nweight=34;\npath=214563";
+"s01101\nweight=34;edge=(5,6)\n"->"s011010\nweight=36;\n";
+
+"s01100\nweight=36;\n";
+"s01100\nweight=36;\n";
+
+"s10111\nweight=34;\npath=123654";
+"s10111\nweight=34;\npath=123654";
+
+"s10110\nweight=36;\n";
+"s10110\nweight=36;\n";
+
+"s10101\nweight=36;\n";
+"s10101\nweight=36;\n";
+
+"s10100\nweight=36;\n";
+"s10100\nweight=36;\n";
+
+"s010111\nweight=34;\npath=213654";
+"s010111\nweight=34;\npath=213654";
+
+"s010110\nweight=36;\n";
+"s010110\nweight=36;\n";
+
+"s010101\nweight=36;\n";
+"s010101\nweight=36;\n";
+
+"s010100\nweight=36;\n";
+"s010100\nweight=36;\n";
+
+"s11011\nweight=34;\npath=124563";
+"s11011\nweight=34;\npath=124563";
+
+"s11010\nweight=36;\n";
+"s11010\nweight=36;\n";
+
+"s011011\nweight=34;\npath=214563";
+"s011011\nweight=34;\npath=214563";
+
+"s011010\nweight=36;\n";
+"s011010\nweight=36;\n";
 
 
 }
