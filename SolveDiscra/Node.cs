@@ -312,11 +312,10 @@ namespace SolveDiscra
 		public string tex_hline = @"\hline";
 		public string tex_tabular = @"\begin{{tabular}}[]{{" + "{0}" + "}}\n";
 		public string tex_table_end = "\n" + @"\end{tabular}" + "\n";
-		public string tex_page_head = @"Определим дугу ветвления для разбиения множества {0}\\" + "\n";
+		public string tex_page_head = @"Определим дугу ветвления для разбиения множества {0} \\" + "\n";
 		public string tex_nl = @"\\" + "\n";
 		public string cellcolor = @"\cellcolor{yellow}";
 		public string tex_caption = @"\captionof*{table}{";
-		public string txt_let_us_split_this_node = "Let us find edge to split on for set: ";
 
 		public Tuple<List<string>,List<string>> TexGetCurrentRowsCols (List<Point> new_path) {
 			List<int> row_names = Enumerable.Range (0, 6).ToList ();
@@ -345,7 +344,7 @@ namespace SolveDiscra
 
 		public string Row2Tex (IEnumerable<int> r, int? color_column = null) {
 			var tmp = r.Select (elem => (elem < 100) ? string.Format ("{0,6}",
-			                                                          elem) : @"\infty");
+			                                                          elem) : @"$\infty$");
 			if (color_column != null) {
 				// add cell color to column
 				tmp = tmp.Select ((elem, index) => (index == color_column) ? (cellcolor + elem.Trim ()) : elem);
@@ -360,7 +359,7 @@ namespace SolveDiscra
 			// Note: only add +1 for vertical line at table end + 1 for row names
 			var column_lines = Enumerable.Repeat ("|", cur_mat.qtyCols + 2);
 			string table_layout = string.Join ("c", column_lines);
-			var columns_names = Enumerable.Repeat ("a", cur_mat.qtyCols).ToList ();
+			//var columns_names = Enumerable.Repeat ("a", cur_mat.qtyCols).ToList ();
 			string table_begin = string.Format (tex_tabular, table_layout);
 			// when we have the path is of the final node it has 6 elements, so
 			// when we try to get the col_names we get nothing as result. Hence we must cut out the last two
@@ -383,7 +382,7 @@ namespace SolveDiscra
 			return table_begin + string.Join ("\n", table_inner) + tex_table_end;
 		}
 
-		// when yu want a table with "min" extra column and row
+		// when you want a table with "min" extra column and row
 		// AND you want to highlight a certain cell in it
 		public string TexMakeColorCellTableWithMinColumn (Matrix cur_matrix, Node nd, Point color_cell) {
 			List<int> print_min_rows = cur_matrix.MinRows ();
@@ -466,8 +465,9 @@ namespace SolveDiscra
 
 		// to calculate child's lower bounds
 		public string TexLowerBound (Node ch) {
-			string this_node_low_bound_str = name.Replace ('s', 'b');
-			string child_low_bound_str = ch.name.Replace ('s', 'b');
+			//FIXME
+			string this_node_low_bound_str = name.Replace ('S', 'b');
+			string child_low_bound_str = ch.name.Replace ('S', 'b');
 			string low_b_calculation = string.Format ("{0} = {1} + {2} + {3} = {4}"
 			                                          , child_low_bound_str
 			                                          , this_node_low_bound_str
@@ -570,7 +570,7 @@ namespace SolveDiscra
 			                                       , s0_data_row
 			                                       , s1_data_row
 			                                      );
-			return txt_let_us_split_this_node + this.name + tex_nl + node_full_data + tex_newpage;
+			return string.Format (tex_page_head, this.name) + node_full_data + tex_newpage;
 		}
 
 		public string LatexCommand () {

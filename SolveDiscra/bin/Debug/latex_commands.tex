@@ -73,22 +73,22 @@ singlelinecheck=false
 \end{center}
 \end{titlepage}
 
-Let us find edge to split on for set: s\\
+Let us find edge to split on for set: S\\
 \begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|c|c|}
 \hline
-s & 1 & 2 & 3 & 4 & 5 & 6\\
+S & 1 & 2 & 3 & 4 & 5 & 6\\
 \hline
-1 & \infty &      0 &      6 &      8 &     10 &      8\\
+1 & $\infty$ &      0 &      6 &      8 &     10 &      8\\
 \hline
-2 &      0 & \infty &      4 &      6 &      8 &      6\\
+2 &      0 & $\infty$ &      4 &      6 &      8 &      6\\
 \hline
-3 &      2 &      0 & \infty &      2 &      2 &      0\\
+3 &      2 &      0 & $\infty$ &      2 &      2 &      0\\
 \hline
-4 &      8 &      6 &      6 & \infty &      0 &      4\\
+4 &      8 &      6 &      6 & $\infty$ &      0 &      4\\
 \hline
-5 &     10 &      8 &      6 &      0 & \infty &      4\\
+5 &     10 &      8 &      6 &      0 & $\infty$ &      4\\
 \hline
-6 &      4 &      2 &      0 &      0 &      0 & \infty\\
+6 &      4 &      2 &      0 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
 \captionof*{table}{(1,2)}
@@ -98,96 +98,96 @@ s & 1 & 2 & 3 & 4 & 5 & 6\\
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c|c}
 \hline
-s0 & 1 & 2 & 3 & 4 & 5 & 6 & min\\
+$S_{0 }$& 1 & 2 & 3 & 4 & 5 & 6 & min\\
 \hline
-1 & \infty & \cellcolor{yellow}\infty &      6 &      8 &     10 &      8 & 6\\
+1 & $\infty$ & \cellcolor{yellow}$\infty$ &      6 &      8 &     10 &      8 & 6\\
 \hline
-2 &      0 & \infty &      4 &      6 &      8 &      6 & 0\\
+2 &      0 & $\infty$ &      4 &      6 &      8 &      6 & 0\\
 \hline
-3 &      2 &      0 & \infty &      2 &      2 &      0 & 0\\
+3 &      2 &      0 & $\infty$ &      2 &      2 &      0 & 0\\
 \hline
-4 &      8 &      6 &      6 & \infty &      0 &      4 & 0\\
+4 &      8 &      6 &      6 & $\infty$ &      0 &      4 & 0\\
 \hline
-5 &     10 &      8 &      6 &      0 & \infty &      4 & 0\\
+5 &     10 &      8 &      6 &      0 & $\infty$ &      4 & 0\\
 \hline
-6 &      4 &      2 &      0 &      0 &      0 & \infty & 0\\
+6 &      4 &      2 &      0 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      0 &      0 &      0 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c|}
 \hline
-s0 & 1 & 2 & 3 & 4 & 5 & 6\\
+$S_{0 }$& 1 & 2 & 3 & 4 & 5 & 6\\
 \hline
-1 & \infty & \infty &      0 &      2 &      4 &      2\\
+1 & $\infty$ & $\infty$ &      0 &      2 &      4 &      2\\
 \hline
-2 &      0 & \infty &      4 &      6 &      8 &      6\\
+2 &      0 & $\infty$ &      4 &      6 &      8 &      6\\
 \hline
-3 &      2 &      0 & \infty &      2 &      2 &      0\\
+3 &      2 &      0 & $\infty$ &      2 &      2 &      0\\
 \hline
-4 &      8 &      6 &      6 & \infty &      0 &      4\\
+4 &      8 &      6 &      6 & $\infty$ &      0 &      4\\
 \hline
-5 &     10 &      8 &      6 &      0 & \infty &      4\\
+5 &     10 &      8 &      6 &      0 & $\infty$ &      4\\
 \hline
-6 &      4 &      2 &      0 &      0 &      0 & \infty\\
+6 &      4 &      2 &      0 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b0 = b + 6 + 0 = 28}
+}\captionof*{table}{$b_{0 }$= b + 6 + 0 = 28}
 \end{table}
 
 
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c}
 \hline
-s1 & 1 & 3 & 4 & 5 & 6 & min\\
+$S_{1 }$& 1 & 3 & 4 & 5 & 6 & min\\
 \hline
-2 & \cellcolor{yellow}\infty &      4 &      6 &      8 &      6 & 4\\
+2 & \cellcolor{yellow}$\infty$ &      4 &      6 &      8 &      6 & 4\\
 \hline
-3 &      2 & \infty &      2 &      2 &      0 & 0\\
+3 &      2 & $\infty$ &      2 &      2 &      0 & 0\\
 \hline
-4 &      8 &      6 & \infty &      0 &      4 & 0\\
+4 &      8 &      6 & $\infty$ &      0 &      4 & 0\\
 \hline
-5 &     10 &      6 &      0 & \infty &      4 & 0\\
+5 &     10 &      6 &      0 & $\infty$ &      4 & 0\\
 \hline
-6 &      4 &      0 &      0 &      0 & \infty & 0\\
+6 &      4 &      0 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      2 &      0 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|}
 \hline
-s1 & 1 & 3 & 4 & 5 & 6\\
+$S_{1 }$& 1 & 3 & 4 & 5 & 6\\
 \hline
-2 & \infty &      0 &      2 &      4 &      2\\
+2 & $\infty$ &      0 &      2 &      4 &      2\\
 \hline
-3 &      0 & \infty &      2 &      2 &      0\\
+3 &      0 & $\infty$ &      2 &      2 &      0\\
 \hline
-4 &      6 &      6 & \infty &      0 &      4\\
+4 &      6 &      6 & $\infty$ &      0 &      4\\
 \hline
-5 &      8 &      6 &      0 & \infty &      4\\
+5 &      8 &      6 &      0 & $\infty$ &      4\\
 \hline
-6 &      2 &      0 &      0 &      0 & \infty\\
+6 &      2 &      0 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b1 = b + 4 + 2 = 28}
+}\captionof*{table}{$b_{1 }$= b + 4 + 2 = 28}
 \end{table}
 
 \newpage
 
-Let us find edge to split on for set: s1\\
+Let us find edge to split on for set: S1\\
 \begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|c|}
 \hline
-s1 & 1 & 3 & 4 & 5 & 6\\
+$S_{1 }$& 1 & 3 & 4 & 5 & 6\\
 \hline
-2 & \infty &      0 &      2 &      4 &      2\\
+2 & $\infty$ &      0 &      2 &      4 &      2\\
 \hline
-3 &      0 & \infty &      2 &      2 &      0\\
+3 &      0 & $\infty$ &      2 &      2 &      0\\
 \hline
-4 &      6 &      6 & \infty &      0 &      4\\
+4 &      6 &      6 & $\infty$ &      0 &      4\\
 \hline
-5 &      8 &      6 &      0 & \infty &      4\\
+5 &      8 &      6 &      0 & $\infty$ &      4\\
 \hline
-6 &      2 &      0 &      0 &      0 & \infty\\
+6 &      2 &      0 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
 \captionof*{table}{(4,5)}
@@ -197,90 +197,90 @@ s1 & 1 & 3 & 4 & 5 & 6\\
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c}
 \hline
-s10 & 1 & 3 & 4 & 5 & 6 & min\\
+$S_{10 }$& 1 & 3 & 4 & 5 & 6 & min\\
 \hline
-2 & \infty &      0 &      2 &      4 &      2 & 0\\
+2 & $\infty$ &      0 &      2 &      4 &      2 & 0\\
 \hline
-3 &      0 & \infty &      2 &      2 &      0 & 0\\
+3 &      0 & $\infty$ &      2 &      2 &      0 & 0\\
 \hline
-4 &      6 &      6 & \infty & \cellcolor{yellow}\infty &      4 & 4\\
+4 &      6 &      6 & $\infty$ & \cellcolor{yellow}$\infty$ &      4 & 4\\
 \hline
-5 &      8 &      6 &      0 & \infty &      4 & 0\\
+5 &      8 &      6 &      0 & $\infty$ &      4 & 0\\
 \hline
-6 &      2 &      0 &      0 &      0 & \infty & 0\\
+6 &      2 &      0 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      0 &      0 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|}
 \hline
-s10 & 1 & 3 & 4 & 5 & 6\\
+$S_{10 }$& 1 & 3 & 4 & 5 & 6\\
 \hline
-2 & \infty &      0 &      2 &      4 &      2\\
+2 & $\infty$ &      0 &      2 &      4 &      2\\
 \hline
-3 &      0 & \infty &      2 &      2 &      0\\
+3 &      0 & $\infty$ &      2 &      2 &      0\\
 \hline
-4 &      2 &      2 & \infty & \infty &      0\\
+4 &      2 &      2 & $\infty$ & $\infty$ &      0\\
 \hline
-5 &      8 &      6 &      0 & \infty &      4\\
+5 &      8 &      6 &      0 & $\infty$ &      4\\
 \hline
-6 &      2 &      0 &      0 &      0 & \infty\\
+6 &      2 &      0 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b10 = b1 + 4 + 0 = 32}
+}\captionof*{table}{$b_{10 }$= $b_{1 }$+ 4 + 0 = 32}
 \end{table}
 
 
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c}
 \hline
-s11 & 1 & 3 & 4 & 6 & min\\
+$S_{11 }$& 1 & 3 & 4 & 6 & min\\
 \hline
-2 & \infty &      0 &      2 &      2 & 0\\
+2 & $\infty$ &      0 &      2 &      2 & 0\\
 \hline
-3 &      0 & \infty &      2 &      0 & 0\\
+3 &      0 & $\infty$ &      2 &      0 & 0\\
 \hline
-5 &      8 &      6 & \cellcolor{yellow}\infty &      4 & 4\\
+5 &      8 &      6 & \cellcolor{yellow}$\infty$ &      4 & 4\\
 \hline
-6 &      2 &      0 &      0 & \infty & 0\\
+6 &      2 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      0 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|}
 \hline
-s11 & 1 & 3 & 4 & 6\\
+$S_{11 }$& 1 & 3 & 4 & 6\\
 \hline
-2 & \infty &      0 &      2 &      2\\
+2 & $\infty$ &      0 &      2 &      2\\
 \hline
-3 &      0 & \infty &      2 &      0\\
+3 &      0 & $\infty$ &      2 &      0\\
 \hline
-5 &      4 &      2 & \infty &      0\\
+5 &      4 &      2 & $\infty$ &      0\\
 \hline
-6 &      2 &      0 &      0 & \infty\\
+6 &      2 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b11 = b1 + 4 + 0 = 32}
+}\captionof*{table}{$b_{11 }$= $b_{1 }$+ 4 + 0 = 32}
 \end{table}
 
 \newpage
 
-Let us find edge to split on for set: s0\\
+Let us find edge to split on for set: S0\\
 \begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|c|c|}
 \hline
-s0 & 1 & 2 & 3 & 4 & 5 & 6\\
+$S_{0 }$& 1 & 2 & 3 & 4 & 5 & 6\\
 \hline
-1 & \infty & \infty &      0 &      2 &      4 &      2\\
+1 & $\infty$ & $\infty$ &      0 &      2 &      4 &      2\\
 \hline
-2 &      0 & \infty &      4 &      6 &      8 &      6\\
+2 &      0 & $\infty$ &      4 &      6 &      8 &      6\\
 \hline
-3 &      2 &      0 & \infty &      2 &      2 &      0\\
+3 &      2 &      0 & $\infty$ &      2 &      2 &      0\\
 \hline
-4 &      8 &      6 &      6 & \infty &      0 &      4\\
+4 &      8 &      6 &      6 & $\infty$ &      0 &      4\\
 \hline
-5 &     10 &      8 &      6 &      0 & \infty &      4\\
+5 &     10 &      8 &      6 &      0 & $\infty$ &      4\\
 \hline
-6 &      4 &      2 &      0 &      0 &      0 & \infty\\
+6 &      4 &      2 &      0 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
 \captionof*{table}{(2,1)}
@@ -290,94 +290,94 @@ s0 & 1 & 2 & 3 & 4 & 5 & 6\\
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c|c}
 \hline
-s00 & 1 & 2 & 3 & 4 & 5 & 6 & min\\
+$S_{00 }$& 1 & 2 & 3 & 4 & 5 & 6 & min\\
 \hline
-1 & \infty & \infty &      0 &      2 &      4 &      2 & 0\\
+1 & $\infty$ & $\infty$ &      0 &      2 &      4 &      2 & 0\\
 \hline
-2 & \cellcolor{yellow}\infty & \infty &      4 &      6 &      8 &      6 & 4\\
+2 & \cellcolor{yellow}$\infty$ & $\infty$ &      4 &      6 &      8 &      6 & 4\\
 \hline
-3 &      2 &      0 & \infty &      2 &      2 &      0 & 0\\
+3 &      2 &      0 & $\infty$ &      2 &      2 &      0 & 0\\
 \hline
-4 &      8 &      6 &      6 & \infty &      0 &      4 & 0\\
+4 &      8 &      6 &      6 & $\infty$ &      0 &      4 & 0\\
 \hline
-5 &     10 &      8 &      6 &      0 & \infty &      4 & 0\\
+5 &     10 &      8 &      6 &      0 & $\infty$ &      4 & 0\\
 \hline
-6 &      4 &      2 &      0 &      0 &      0 & \infty & 0\\
+6 &      4 &      2 &      0 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      2 &      0 &      0 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c|}
 \hline
-s00 & 1 & 2 & 3 & 4 & 5 & 6\\
+$S_{00 }$& 1 & 2 & 3 & 4 & 5 & 6\\
 \hline
-1 & \infty & \infty &      0 &      2 &      4 &      2\\
+1 & $\infty$ & $\infty$ &      0 &      2 &      4 &      2\\
 \hline
-2 & \infty & \infty &      0 &      2 &      4 &      2\\
+2 & $\infty$ & $\infty$ &      0 &      2 &      4 &      2\\
 \hline
-3 &      0 &      0 & \infty &      2 &      2 &      0\\
+3 &      0 &      0 & $\infty$ &      2 &      2 &      0\\
 \hline
-4 &      6 &      6 &      6 & \infty &      0 &      4\\
+4 &      6 &      6 &      6 & $\infty$ &      0 &      4\\
 \hline
-5 &      8 &      8 &      6 &      0 & \infty &      4\\
+5 &      8 &      8 &      6 &      0 & $\infty$ &      4\\
 \hline
-6 &      2 &      2 &      0 &      0 &      0 & \infty\\
+6 &      2 &      2 &      0 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b00 = b0 + 4 + 2 = 34}
+}\captionof*{table}{$b_{00 }$= $b_{0 }$+ 4 + 2 = 34}
 \end{table}
 
 
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c}
 \hline
-s01 & 2 & 3 & 4 & 5 & 6 & min\\
+$S_{01 }$& 2 & 3 & 4 & 5 & 6 & min\\
 \hline
-1 & \infty &      0 &      2 &      4 &      2 & 0\\
+1 & $\infty$ &      0 &      2 &      4 &      2 & 0\\
 \hline
-3 &      0 & \infty &      2 &      2 &      0 & 0\\
+3 &      0 & $\infty$ &      2 &      2 &      0 & 0\\
 \hline
-4 &      6 &      6 & \infty &      0 &      4 & 0\\
+4 &      6 &      6 & $\infty$ &      0 &      4 & 0\\
 \hline
-5 &      8 &      6 &      0 & \infty &      4 & 0\\
+5 &      8 &      6 &      0 & $\infty$ &      4 & 0\\
 \hline
-6 &      2 &      0 &      0 &      0 & \infty & 0\\
+6 &      2 &      0 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      0 &      0 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|}
 \hline
-s01 & 2 & 3 & 4 & 5 & 6\\
+$S_{01 }$& 2 & 3 & 4 & 5 & 6\\
 \hline
-1 & \infty &      0 &      2 &      4 &      2\\
+1 & $\infty$ &      0 &      2 &      4 &      2\\
 \hline
-3 &      0 & \infty &      2 &      2 &      0\\
+3 &      0 & $\infty$ &      2 &      2 &      0\\
 \hline
-4 &      6 &      6 & \infty &      0 &      4\\
+4 &      6 &      6 & $\infty$ &      0 &      4\\
 \hline
-5 &      8 &      6 &      0 & \infty &      4\\
+5 &      8 &      6 &      0 & $\infty$ &      4\\
 \hline
-6 &      2 &      0 &      0 &      0 & \infty\\
+6 &      2 &      0 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b01 = b0 + 0 + 0 = 28}
+}\captionof*{table}{$b_{01 }$= $b_{0 }$+ 0 + 0 = 28}
 \end{table}
 
 \newpage
 
-Let us find edge to split on for set: s11\\
+Let us find edge to split on for set: S11\\
 \begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|}
 \hline
-s11 & 1 & 3 & 4 & 6\\
+$S_{11 }$& 1 & 3 & 4 & 6\\
 \hline
-2 & \infty &      0 &      2 &      2\\
+2 & $\infty$ &      0 &      2 &      2\\
 \hline
-3 &      0 & \infty &      2 &      0\\
+3 &      0 & $\infty$ &      2 &      0\\
 \hline
-5 &      4 &      2 & \infty &      0\\
+5 &      4 &      2 & $\infty$ &      0\\
 \hline
-6 &      2 &      0 &      0 & \infty\\
+6 &      2 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
 \captionof*{table}{(2,3)}
@@ -387,80 +387,80 @@ s11 & 1 & 3 & 4 & 6\\
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c}
 \hline
-s110 & 1 & 3 & 4 & 6 & min\\
+$S_{110 }$& 1 & 3 & 4 & 6 & min\\
 \hline
-2 & \infty & \cellcolor{yellow}\infty &      2 &      2 & 2\\
+2 & $\infty$ & \cellcolor{yellow}$\infty$ &      2 &      2 & 2\\
 \hline
-3 &      0 & \infty &      2 &      0 & 0\\
+3 &      0 & $\infty$ &      2 &      0 & 0\\
 \hline
-5 &      4 &      2 & \infty &      0 & 0\\
+5 &      4 &      2 & $\infty$ &      0 & 0\\
 \hline
-6 &      2 &      0 &      0 & \infty & 0\\
+6 &      2 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      0 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|}
 \hline
-s110 & 1 & 3 & 4 & 6\\
+$S_{110 }$& 1 & 3 & 4 & 6\\
 \hline
-2 & \infty & \infty &      0 &      0\\
+2 & $\infty$ & $\infty$ &      0 &      0\\
 \hline
-3 &      0 & \infty &      2 &      0\\
+3 &      0 & $\infty$ &      2 &      0\\
 \hline
-5 &      4 &      2 & \infty &      0\\
+5 &      4 &      2 & $\infty$ &      0\\
 \hline
-6 &      2 &      0 &      0 & \infty\\
+6 &      2 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b110 = b11 + 2 + 0 = 34}
+}\captionof*{table}{$b_{110 }$= $b_{11 }$+ 2 + 0 = 34}
 \end{table}
 
 
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c}
 \hline
-s111 & 1 & 4 & 6 & min\\
+$S_{111 }$& 1 & 4 & 6 & min\\
 \hline
-3 & \cellcolor{yellow}\infty &      2 &      0 & 0\\
+3 & \cellcolor{yellow}$\infty$ &      2 &      0 & 0\\
 \hline
-5 &      4 & \infty &      0 & 0\\
+5 &      4 & $\infty$ &      0 & 0\\
 \hline
-6 &      2 &      0 & \infty & 0\\
+6 &      2 &      0 & $\infty$ & 0\\
 \hline
 min &      2 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|}
 \hline
-s111 & 1 & 4 & 6\\
+$S_{111 }$& 1 & 4 & 6\\
 \hline
-3 & \infty &      2 &      0\\
+3 & $\infty$ &      2 &      0\\
 \hline
-5 &      2 & \infty &      0\\
+5 &      2 & $\infty$ &      0\\
 \hline
-6 &      0 &      0 & \infty\\
+6 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b111 = b11 + 0 + 2 = 34}
+}\captionof*{table}{$b_{111 }$= $b_{11 }$+ 0 + 2 = 34}
 \end{table}
 
 \newpage
 
-Let us find edge to split on for set: s10\\
+Let us find edge to split on for set: S10\\
 \begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|c|}
 \hline
-s10 & 1 & 3 & 4 & 5 & 6\\
+$S_{10 }$& 1 & 3 & 4 & 5 & 6\\
 \hline
-2 & \infty &      0 &      2 &      4 &      2\\
+2 & $\infty$ &      0 &      2 &      4 &      2\\
 \hline
-3 &      0 & \infty &      2 &      2 &      0\\
+3 &      0 & $\infty$ &      2 &      2 &      0\\
 \hline
-4 &      2 &      2 & \infty & \infty &      0\\
+4 &      2 &      2 & $\infty$ & $\infty$ &      0\\
 \hline
-5 &      8 &      6 &      0 & \infty &      4\\
+5 &      8 &      6 &      0 & $\infty$ &      4\\
 \hline
-6 &      2 &      0 &      0 &      0 & \infty\\
+6 &      2 &      0 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
 \captionof*{table}{(5,4)}
@@ -470,88 +470,88 @@ s10 & 1 & 3 & 4 & 5 & 6\\
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c}
 \hline
-s100 & 1 & 3 & 4 & 5 & 6 & min\\
+$S_{100 }$& 1 & 3 & 4 & 5 & 6 & min\\
 \hline
-2 & \infty &      0 &      2 &      4 &      2 & 0\\
+2 & $\infty$ &      0 &      2 &      4 &      2 & 0\\
 \hline
-3 &      0 & \infty &      2 &      2 &      0 & 0\\
+3 &      0 & $\infty$ &      2 &      2 &      0 & 0\\
 \hline
-4 &      2 &      2 & \infty & \infty &      0 & 0\\
+4 &      2 &      2 & $\infty$ & $\infty$ &      0 & 0\\
 \hline
-5 &      8 &      6 & \cellcolor{yellow}\infty & \infty &      4 & 4\\
+5 &      8 &      6 & \cellcolor{yellow}$\infty$ & $\infty$ &      4 & 4\\
 \hline
-6 &      2 &      0 &      0 &      0 & \infty & 0\\
+6 &      2 &      0 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      0 &      0 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|}
 \hline
-s100 & 1 & 3 & 4 & 5 & 6\\
+$S_{100 }$& 1 & 3 & 4 & 5 & 6\\
 \hline
-2 & \infty &      0 &      2 &      4 &      2\\
+2 & $\infty$ &      0 &      2 &      4 &      2\\
 \hline
-3 &      0 & \infty &      2 &      2 &      0\\
+3 &      0 & $\infty$ &      2 &      2 &      0\\
 \hline
-4 &      2 &      2 & \infty & \infty &      0\\
+4 &      2 &      2 & $\infty$ & $\infty$ &      0\\
 \hline
-5 &      4 &      2 & \infty & \infty &      0\\
+5 &      4 &      2 & $\infty$ & $\infty$ &      0\\
 \hline
-6 &      2 &      0 &      0 &      0 & \infty\\
+6 &      2 &      0 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b100 = b10 + 4 + 0 = 36}
+}\captionof*{table}{$b_{100 }$= $b_{10 }$+ 4 + 0 = 36}
 \end{table}
 
 
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c}
 \hline
-s101 & 1 & 3 & 5 & 6 & min\\
+$S_{101 }$& 1 & 3 & 5 & 6 & min\\
 \hline
-2 & \infty &      0 &      4 &      2 & 0\\
+2 & $\infty$ &      0 &      4 &      2 & 0\\
 \hline
-3 &      0 & \infty &      2 &      0 & 0\\
+3 &      0 & $\infty$ &      2 &      0 & 0\\
 \hline
-4 &      2 &      2 & \infty &      0 & 0\\
+4 &      2 &      2 & $\infty$ &      0 & 0\\
 \hline
-6 &      2 &      0 &      0 & \infty & 0\\
+6 &      2 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      0 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|}
 \hline
-s101 & 1 & 3 & 5 & 6\\
+$S_{101 }$& 1 & 3 & 5 & 6\\
 \hline
-2 & \infty &      0 &      4 &      2\\
+2 & $\infty$ &      0 &      4 &      2\\
 \hline
-3 &      0 & \infty &      2 &      0\\
+3 &      0 & $\infty$ &      2 &      0\\
 \hline
-4 &      2 &      2 & \infty &      0\\
+4 &      2 &      2 & $\infty$ &      0\\
 \hline
-6 &      2 &      0 &      0 & \infty\\
+6 &      2 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b101 = b10 + 0 + 0 = 32}
+}\captionof*{table}{$b_{101 }$= $b_{10 }$+ 0 + 0 = 32}
 \end{table}
 
 \newpage
 
-Let us find edge to split on for set: s01\\
+Let us find edge to split on for set: S01\\
 \begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|c|}
 \hline
-s01 & 2 & 3 & 4 & 5 & 6\\
+$S_{01 }$& 2 & 3 & 4 & 5 & 6\\
 \hline
-1 & \infty &      0 &      2 &      4 &      2\\
+1 & $\infty$ &      0 &      2 &      4 &      2\\
 \hline
-3 &      0 & \infty &      2 &      2 &      0\\
+3 &      0 & $\infty$ &      2 &      2 &      0\\
 \hline
-4 &      6 &      6 & \infty &      0 &      4\\
+4 &      6 &      6 & $\infty$ &      0 &      4\\
 \hline
-5 &      8 &      6 &      0 & \infty &      4\\
+5 &      8 &      6 &      0 & $\infty$ &      4\\
 \hline
-6 &      2 &      0 &      0 &      0 & \infty\\
+6 &      2 &      0 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
 \captionof*{table}{(4,5)}
@@ -561,90 +561,90 @@ s01 & 2 & 3 & 4 & 5 & 6\\
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c}
 \hline
-s010 & 2 & 3 & 4 & 5 & 6 & min\\
+$S_{010 }$& 2 & 3 & 4 & 5 & 6 & min\\
 \hline
-1 & \infty &      0 &      2 &      4 &      2 & 0\\
+1 & $\infty$ &      0 &      2 &      4 &      2 & 0\\
 \hline
-3 &      0 & \infty &      2 &      2 &      0 & 0\\
+3 &      0 & $\infty$ &      2 &      2 &      0 & 0\\
 \hline
-4 &      6 &      6 & \infty & \cellcolor{yellow}\infty &      4 & 4\\
+4 &      6 &      6 & $\infty$ & \cellcolor{yellow}$\infty$ &      4 & 4\\
 \hline
-5 &      8 &      6 &      0 & \infty &      4 & 0\\
+5 &      8 &      6 &      0 & $\infty$ &      4 & 0\\
 \hline
-6 &      2 &      0 &      0 &      0 & \infty & 0\\
+6 &      2 &      0 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      0 &      0 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|}
 \hline
-s010 & 2 & 3 & 4 & 5 & 6\\
+$S_{010 }$& 2 & 3 & 4 & 5 & 6\\
 \hline
-1 & \infty &      0 &      2 &      4 &      2\\
+1 & $\infty$ &      0 &      2 &      4 &      2\\
 \hline
-3 &      0 & \infty &      2 &      2 &      0\\
+3 &      0 & $\infty$ &      2 &      2 &      0\\
 \hline
-4 &      2 &      2 & \infty & \infty &      0\\
+4 &      2 &      2 & $\infty$ & $\infty$ &      0\\
 \hline
-5 &      8 &      6 &      0 & \infty &      4\\
+5 &      8 &      6 &      0 & $\infty$ &      4\\
 \hline
-6 &      2 &      0 &      0 &      0 & \infty\\
+6 &      2 &      0 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b010 = b01 + 4 + 0 = 32}
+}\captionof*{table}{$b_{010 }$= $b_{01 }$+ 4 + 0 = 32}
 \end{table}
 
 
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c}
 \hline
-s011 & 2 & 3 & 4 & 6 & min\\
+$S_{011 }$& 2 & 3 & 4 & 6 & min\\
 \hline
-1 & \infty &      0 &      2 &      2 & 0\\
+1 & $\infty$ &      0 &      2 &      2 & 0\\
 \hline
-3 &      0 & \infty &      2 &      0 & 0\\
+3 &      0 & $\infty$ &      2 &      0 & 0\\
 \hline
-5 &      8 &      6 & \cellcolor{yellow}\infty &      4 & 4\\
+5 &      8 &      6 & \cellcolor{yellow}$\infty$ &      4 & 4\\
 \hline
-6 &      2 &      0 &      0 & \infty & 0\\
+6 &      2 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      0 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|}
 \hline
-s011 & 2 & 3 & 4 & 6\\
+$S_{011 }$& 2 & 3 & 4 & 6\\
 \hline
-1 & \infty &      0 &      2 &      2\\
+1 & $\infty$ &      0 &      2 &      2\\
 \hline
-3 &      0 & \infty &      2 &      0\\
+3 &      0 & $\infty$ &      2 &      0\\
 \hline
-5 &      4 &      2 & \infty &      0\\
+5 &      4 &      2 & $\infty$ &      0\\
 \hline
-6 &      2 &      0 &      0 & \infty\\
+6 &      2 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b011 = b01 + 4 + 0 = 32}
+}\captionof*{table}{$b_{011 }$= $b_{01 }$+ 4 + 0 = 32}
 \end{table}
 
 \newpage
 
-Let us find edge to split on for set: s00\\
+Let us find edge to split on for set: S00\\
 \begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|c|c|}
 \hline
-s00 & 1 & 2 & 3 & 4 & 5 & 6\\
+$S_{00 }$& 1 & 2 & 3 & 4 & 5 & 6\\
 \hline
-1 & \infty & \infty &      0 &      2 &      4 &      2\\
+1 & $\infty$ & $\infty$ &      0 &      2 &      4 &      2\\
 \hline
-2 & \infty & \infty &      0 &      2 &      4 &      2\\
+2 & $\infty$ & $\infty$ &      0 &      2 &      4 &      2\\
 \hline
-3 &      0 &      0 & \infty &      2 &      2 &      0\\
+3 &      0 &      0 & $\infty$ &      2 &      2 &      0\\
 \hline
-4 &      6 &      6 &      6 & \infty &      0 &      4\\
+4 &      6 &      6 &      6 & $\infty$ &      0 &      4\\
 \hline
-5 &      8 &      8 &      6 &      0 & \infty &      4\\
+5 &      8 &      8 &      6 &      0 & $\infty$ &      4\\
 \hline
-6 &      2 &      2 &      0 &      0 &      0 & \infty\\
+6 &      2 &      2 &      0 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
 \captionof*{table}{(4,5)}
@@ -654,94 +654,94 @@ s00 & 1 & 2 & 3 & 4 & 5 & 6\\
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c|c}
 \hline
-s000 & 1 & 2 & 3 & 4 & 5 & 6 & min\\
+$S_{000 }$& 1 & 2 & 3 & 4 & 5 & 6 & min\\
 \hline
-1 & \infty & \infty &      0 &      2 &      4 &      2 & 0\\
+1 & $\infty$ & $\infty$ &      0 &      2 &      4 &      2 & 0\\
 \hline
-2 & \infty & \infty &      0 &      2 &      4 &      2 & 0\\
+2 & $\infty$ & $\infty$ &      0 &      2 &      4 &      2 & 0\\
 \hline
-3 &      0 &      0 & \infty &      2 &      2 &      0 & 0\\
+3 &      0 &      0 & $\infty$ &      2 &      2 &      0 & 0\\
 \hline
-4 &      6 &      6 &      6 & \infty & \cellcolor{yellow}\infty &      4 & 4\\
+4 &      6 &      6 &      6 & $\infty$ & \cellcolor{yellow}$\infty$ &      4 & 4\\
 \hline
-5 &      8 &      8 &      6 &      0 & \infty &      4 & 0\\
+5 &      8 &      8 &      6 &      0 & $\infty$ &      4 & 0\\
 \hline
-6 &      2 &      2 &      0 &      0 &      0 & \infty & 0\\
+6 &      2 &      2 &      0 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      0 &      0 &      0 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c|}
 \hline
-s000 & 1 & 2 & 3 & 4 & 5 & 6\\
+$S_{000 }$& 1 & 2 & 3 & 4 & 5 & 6\\
 \hline
-1 & \infty & \infty &      0 &      2 &      4 &      2\\
+1 & $\infty$ & $\infty$ &      0 &      2 &      4 &      2\\
 \hline
-2 & \infty & \infty &      0 &      2 &      4 &      2\\
+2 & $\infty$ & $\infty$ &      0 &      2 &      4 &      2\\
 \hline
-3 &      0 &      0 & \infty &      2 &      2 &      0\\
+3 &      0 &      0 & $\infty$ &      2 &      2 &      0\\
 \hline
-4 &      2 &      2 &      2 & \infty & \infty &      0\\
+4 &      2 &      2 &      2 & $\infty$ & $\infty$ &      0\\
 \hline
-5 &      8 &      8 &      6 &      0 & \infty &      4\\
+5 &      8 &      8 &      6 &      0 & $\infty$ &      4\\
 \hline
-6 &      2 &      2 &      0 &      0 &      0 & \infty\\
+6 &      2 &      2 &      0 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b000 = b00 + 4 + 0 = 38}
+}\captionof*{table}{$b_{000 }$= $b_{00 }$+ 4 + 0 = 38}
 \end{table}
 
 
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c}
 \hline
-s001 & 1 & 2 & 3 & 4 & 6 & min\\
+$S_{001 }$& 1 & 2 & 3 & 4 & 6 & min\\
 \hline
-1 & \infty & \infty &      0 &      2 &      2 & 0\\
+1 & $\infty$ & $\infty$ &      0 &      2 &      2 & 0\\
 \hline
-2 & \infty & \infty &      0 &      2 &      2 & 0\\
+2 & $\infty$ & $\infty$ &      0 &      2 &      2 & 0\\
 \hline
-3 &      0 &      0 & \infty &      2 &      0 & 0\\
+3 &      0 &      0 & $\infty$ &      2 &      0 & 0\\
 \hline
-5 &      8 &      8 &      6 & \cellcolor{yellow}\infty &      4 & 4\\
+5 &      8 &      8 &      6 & \cellcolor{yellow}$\infty$ &      4 & 4\\
 \hline
-6 &      2 &      2 &      0 &      0 & \infty & 0\\
+6 &      2 &      2 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      0 &      0 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|}
 \hline
-s001 & 1 & 2 & 3 & 4 & 6\\
+$S_{001 }$& 1 & 2 & 3 & 4 & 6\\
 \hline
-1 & \infty & \infty &      0 &      2 &      2\\
+1 & $\infty$ & $\infty$ &      0 &      2 &      2\\
 \hline
-2 & \infty & \infty &      0 &      2 &      2\\
+2 & $\infty$ & $\infty$ &      0 &      2 &      2\\
 \hline
-3 &      0 &      0 & \infty &      2 &      0\\
+3 &      0 &      0 & $\infty$ &      2 &      0\\
 \hline
-5 &      4 &      4 &      2 & \infty &      0\\
+5 &      4 &      4 &      2 & $\infty$ &      0\\
 \hline
-6 &      2 &      2 &      0 &      0 & \infty\\
+6 &      2 &      2 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b001 = b00 + 4 + 0 = 38}
+}\captionof*{table}{$b_{001 }$= $b_{00 }$+ 4 + 0 = 38}
 \end{table}
 
 \newpage
 
-Let us find edge to split on for set: s011\\
+Let us find edge to split on for set: S011\\
 \begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|}
 \hline
-s011 & 2 & 3 & 4 & 6\\
+$S_{011 }$& 2 & 3 & 4 & 6\\
 \hline
-1 & \infty &      0 &      2 &      2\\
+1 & $\infty$ &      0 &      2 &      2\\
 \hline
-3 &      0 & \infty &      2 &      0\\
+3 &      0 & $\infty$ &      2 &      0\\
 \hline
-5 &      4 &      2 & \infty &      0\\
+5 &      4 &      2 & $\infty$ &      0\\
 \hline
-6 &      2 &      0 &      0 & \infty\\
+6 &      2 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
 \captionof*{table}{(1,3)}
@@ -751,80 +751,80 @@ s011 & 2 & 3 & 4 & 6\\
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c}
 \hline
-s0110 & 2 & 3 & 4 & 6 & min\\
+$S_{0110 }$& 2 & 3 & 4 & 6 & min\\
 \hline
-1 & \infty & \cellcolor{yellow}\infty &      2 &      2 & 2\\
+1 & $\infty$ & \cellcolor{yellow}$\infty$ &      2 &      2 & 2\\
 \hline
-3 &      0 & \infty &      2 &      0 & 0\\
+3 &      0 & $\infty$ &      2 &      0 & 0\\
 \hline
-5 &      4 &      2 & \infty &      0 & 0\\
+5 &      4 &      2 & $\infty$ &      0 & 0\\
 \hline
-6 &      2 &      0 &      0 & \infty & 0\\
+6 &      2 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      0 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|}
 \hline
-s0110 & 2 & 3 & 4 & 6\\
+$S_{0110 }$& 2 & 3 & 4 & 6\\
 \hline
-1 & \infty & \infty &      0 &      0\\
+1 & $\infty$ & $\infty$ &      0 &      0\\
 \hline
-3 &      0 & \infty &      2 &      0\\
+3 &      0 & $\infty$ &      2 &      0\\
 \hline
-5 &      4 &      2 & \infty &      0\\
+5 &      4 &      2 & $\infty$ &      0\\
 \hline
-6 &      2 &      0 &      0 & \infty\\
+6 &      2 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b0110 = b011 + 2 + 0 = 34}
+}\captionof*{table}{$b_{0110 }$= $b_{011 }$+ 2 + 0 = 34}
 \end{table}
 
 
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c}
 \hline
-s0111 & 2 & 4 & 6 & min\\
+$S_{0111 }$& 2 & 4 & 6 & min\\
 \hline
-3 & \cellcolor{yellow}\infty &      2 &      0 & 0\\
+3 & \cellcolor{yellow}$\infty$ &      2 &      0 & 0\\
 \hline
-5 &      4 & \infty &      0 & 0\\
+5 &      4 & $\infty$ &      0 & 0\\
 \hline
-6 &      2 &      0 & \infty & 0\\
+6 &      2 &      0 & $\infty$ & 0\\
 \hline
 min &      2 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|}
 \hline
-s0111 & 2 & 4 & 6\\
+$S_{0111 }$& 2 & 4 & 6\\
 \hline
-3 & \infty &      2 &      0\\
+3 & $\infty$ &      2 &      0\\
 \hline
-5 &      2 & \infty &      0\\
+5 &      2 & $\infty$ &      0\\
 \hline
-6 &      0 &      0 & \infty\\
+6 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b0111 = b011 + 0 + 2 = 34}
+}\captionof*{table}{$b_{0111 }$= $b_{011 }$+ 0 + 2 = 34}
 \end{table}
 
 \newpage
 
-Let us find edge to split on for set: s010\\
+Let us find edge to split on for set: S010\\
 \begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|c|}
 \hline
-s010 & 2 & 3 & 4 & 5 & 6\\
+$S_{010 }$& 2 & 3 & 4 & 5 & 6\\
 \hline
-1 & \infty &      0 &      2 &      4 &      2\\
+1 & $\infty$ &      0 &      2 &      4 &      2\\
 \hline
-3 &      0 & \infty &      2 &      2 &      0\\
+3 &      0 & $\infty$ &      2 &      2 &      0\\
 \hline
-4 &      2 &      2 & \infty & \infty &      0\\
+4 &      2 &      2 & $\infty$ & $\infty$ &      0\\
 \hline
-5 &      8 &      6 &      0 & \infty &      4\\
+5 &      8 &      6 &      0 & $\infty$ &      4\\
 \hline
-6 &      2 &      0 &      0 &      0 & \infty\\
+6 &      2 &      0 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
 \captionof*{table}{(5,4)}
@@ -834,84 +834,84 @@ s010 & 2 & 3 & 4 & 5 & 6\\
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|c}
 \hline
-s0100 & 2 & 3 & 4 & 5 & 6 & min\\
+$S_{0100 }$& 2 & 3 & 4 & 5 & 6 & min\\
 \hline
-1 & \infty &      0 &      2 &      4 &      2 & 0\\
+1 & $\infty$ &      0 &      2 &      4 &      2 & 0\\
 \hline
-3 &      0 & \infty &      2 &      2 &      0 & 0\\
+3 &      0 & $\infty$ &      2 &      2 &      0 & 0\\
 \hline
-4 &      2 &      2 & \infty & \infty &      0 & 0\\
+4 &      2 &      2 & $\infty$ & $\infty$ &      0 & 0\\
 \hline
-5 &      8 &      6 & \cellcolor{yellow}\infty & \infty &      4 & 4\\
+5 &      8 &      6 & \cellcolor{yellow}$\infty$ & $\infty$ &      4 & 4\\
 \hline
-6 &      2 &      0 &      0 &      0 & \infty & 0\\
+6 &      2 &      0 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      0 &      0 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c|}
 \hline
-s0100 & 2 & 3 & 4 & 5 & 6\\
+$S_{0100 }$& 2 & 3 & 4 & 5 & 6\\
 \hline
-1 & \infty &      0 &      2 &      4 &      2\\
+1 & $\infty$ &      0 &      2 &      4 &      2\\
 \hline
-3 &      0 & \infty &      2 &      2 &      0\\
+3 &      0 & $\infty$ &      2 &      2 &      0\\
 \hline
-4 &      2 &      2 & \infty & \infty &      0\\
+4 &      2 &      2 & $\infty$ & $\infty$ &      0\\
 \hline
-5 &      4 &      2 & \infty & \infty &      0\\
+5 &      4 &      2 & $\infty$ & $\infty$ &      0\\
 \hline
-6 &      2 &      0 &      0 &      0 & \infty\\
+6 &      2 &      0 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b0100 = b010 + 4 + 0 = 36}
+}\captionof*{table}{$b_{0100 }$= $b_{010 }$+ 4 + 0 = 36}
 \end{table}
 
 
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c}
 \hline
-s0101 & 2 & 3 & 5 & 6 & min\\
+$S_{0101 }$& 2 & 3 & 5 & 6 & min\\
 \hline
-1 & \infty &      0 &      4 &      2 & 0\\
+1 & $\infty$ &      0 &      4 &      2 & 0\\
 \hline
-3 &      0 & \infty &      2 &      0 & 0\\
+3 &      0 & $\infty$ &      2 &      0 & 0\\
 \hline
-4 &      2 &      2 & \infty &      0 & 0\\
+4 &      2 &      2 & $\infty$ &      0 & 0\\
 \hline
-6 &      2 &      0 &      0 & \infty & 0\\
+6 &      2 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      0 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|}
 \hline
-s0101 & 2 & 3 & 5 & 6\\
+$S_{0101 }$& 2 & 3 & 5 & 6\\
 \hline
-1 & \infty &      0 &      4 &      2\\
+1 & $\infty$ &      0 &      4 &      2\\
 \hline
-3 &      0 & \infty &      2 &      0\\
+3 &      0 & $\infty$ &      2 &      0\\
 \hline
-4 &      2 &      2 & \infty &      0\\
+4 &      2 &      2 & $\infty$ &      0\\
 \hline
-6 &      2 &      0 &      0 & \infty\\
+6 &      2 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b0101 = b010 + 0 + 0 = 32}
+}\captionof*{table}{$b_{0101 }$= $b_{010 }$+ 0 + 0 = 32}
 \end{table}
 
 \newpage
 
-Let us find edge to split on for set: s111\\
+Let us find edge to split on for set: S111\\
 \begin{flushleft}\begin{tabular}[]{|c|c|c|c|}
 \hline
-s111 & 1 & 4 & 6\\
+$S_{111 }$& 1 & 4 & 6\\
 \hline
-3 & \infty &      2 &      0\\
+3 & $\infty$ &      2 &      0\\
 \hline
-5 &      2 & \infty &      0\\
+5 &      2 & $\infty$ &      0\\
 \hline
-6 &      0 &      0 & \infty\\
+6 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
 \captionof*{table}{(3,6)}
@@ -921,55 +921,55 @@ s111 & 1 & 4 & 6\\
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c}
 \hline
-s1110 & 1 & 4 & 6 & min\\
+$S_{1110 }$& 1 & 4 & 6 & min\\
 \hline
-3 & \infty &      2 & \cellcolor{yellow}\infty & 2\\
+3 & $\infty$ &      2 & \cellcolor{yellow}$\infty$ & 2\\
 \hline
-5 &      2 & \infty &      0 & 0\\
+5 &      2 & $\infty$ &      0 & 0\\
 \hline
-6 &      0 &      0 & \infty & 0\\
+6 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|}
 \hline
-s1110 & 1 & 4 & 6\\
+$S_{1110 }$& 1 & 4 & 6\\
 \hline
-3 & \infty &      0 & \infty\\
+3 & $\infty$ &      0 & $\infty$\\
 \hline
-5 &      2 & \infty &      0\\
+5 &      2 & $\infty$ &      0\\
 \hline
-6 &      0 &      0 & \infty\\
+6 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b1110 = b111 + 2 + 0 = 36}
+}\captionof*{table}{$b_{1110 }$= $b_{111 }$+ 2 + 0 = 36}
 \end{table}
 
 
 \begin{tabular}[]{|c|c|c|}
 \hline
-s1111 & 1 & 4\\
+$S_{1111 }$& 1 & 4\\
 \hline
-5 &      2 & \infty\\
+5 &      2 & $\infty$\\
 \hline
-6 & \infty &      0\\
+6 & $\infty$ &      0\\
 \hline
 \end{tabular}
-\captionof*{table}{b1111 = b111 + 2 + 0 = 36}\newpage
+\captionof*{table}{$b_{1111 }$= $b_{111 }$+ 2 + 0 = 36}\newpage
 
-Let us find edge to split on for set: s110\\
+Let us find edge to split on for set: S110\\
 \begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|}
 \hline
-s110 & 1 & 3 & 4 & 6\\
+$S_{110 }$& 1 & 3 & 4 & 6\\
 \hline
-2 & \infty & \infty &      0 &      0\\
+2 & $\infty$ & $\infty$ &      0 &      0\\
 \hline
-3 &      0 & \infty &      2 &      0\\
+3 &      0 & $\infty$ &      2 &      0\\
 \hline
-5 &      4 &      2 & \infty &      0\\
+5 &      4 &      2 & $\infty$ &      0\\
 \hline
-6 &      2 &      0 &      0 & \infty\\
+6 &      2 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
 \captionof*{table}{(3,1)}
@@ -979,78 +979,78 @@ s110 & 1 & 3 & 4 & 6\\
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c}
 \hline
-s1100 & 1 & 3 & 4 & 6 & min\\
+$S_{1100 }$& 1 & 3 & 4 & 6 & min\\
 \hline
-2 & \infty & \infty &      0 &      0 & 0\\
+2 & $\infty$ & $\infty$ &      0 &      0 & 0\\
 \hline
-3 & \cellcolor{yellow}\infty & \infty &      2 &      0 & 0\\
+3 & \cellcolor{yellow}$\infty$ & $\infty$ &      2 &      0 & 0\\
 \hline
-5 &      4 &      2 & \infty &      0 & 0\\
+5 &      4 &      2 & $\infty$ &      0 & 0\\
 \hline
-6 &      2 &      0 &      0 & \infty & 0\\
+6 &      2 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      2 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|}
 \hline
-s1100 & 1 & 3 & 4 & 6\\
+$S_{1100 }$& 1 & 3 & 4 & 6\\
 \hline
-2 & \infty & \infty &      0 &      0\\
+2 & $\infty$ & $\infty$ &      0 &      0\\
 \hline
-3 & \infty & \infty &      2 &      0\\
+3 & $\infty$ & $\infty$ &      2 &      0\\
 \hline
-5 &      2 &      2 & \infty &      0\\
+5 &      2 &      2 & $\infty$ &      0\\
 \hline
-6 &      0 &      0 &      0 & \infty\\
+6 &      0 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b1100 = b110 + 0 + 2 = 36}
+}\captionof*{table}{$b_{1100 }$= $b_{110 }$+ 0 + 2 = 36}
 \end{table}
 
 
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c}
 \hline
-s1101 & 3 & 4 & 6 & min\\
+$S_{1101 }$& 3 & 4 & 6 & min\\
 \hline
-2 & \infty &      0 &      0 & 0\\
+2 & $\infty$ &      0 &      0 & 0\\
 \hline
-5 &      2 & \infty &      0 & 0\\
+5 &      2 & $\infty$ &      0 & 0\\
 \hline
-6 &      0 &      0 & \infty & 0\\
+6 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|}
 \hline
-s1101 & 3 & 4 & 6\\
+$S_{1101 }$& 3 & 4 & 6\\
 \hline
-2 & \infty &      0 &      0\\
+2 & $\infty$ &      0 &      0\\
 \hline
-5 &      2 & \infty &      0\\
+5 &      2 & $\infty$ &      0\\
 \hline
-6 &      0 &      0 & \infty\\
+6 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b1101 = b110 + 0 + 0 = 34}
+}\captionof*{table}{$b_{1101 }$= $b_{110 }$+ 0 + 0 = 34}
 \end{table}
 
 \newpage
 
-Let us find edge to split on for set: s101\\
+Let us find edge to split on for set: S101\\
 \begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|}
 \hline
-s101 & 1 & 3 & 5 & 6\\
+$S_{101 }$& 1 & 3 & 5 & 6\\
 \hline
-2 & \infty &      0 &      4 &      2\\
+2 & $\infty$ &      0 &      4 &      2\\
 \hline
-3 &      0 & \infty &      2 &      0\\
+3 &      0 & $\infty$ &      2 &      0\\
 \hline
-4 &      2 &      2 & \infty &      0\\
+4 &      2 &      2 & $\infty$ &      0\\
 \hline
-6 &      2 &      0 &      0 & \infty\\
+6 &      2 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
 \captionof*{table}{(2,3)}
@@ -1060,77 +1060,77 @@ s101 & 1 & 3 & 5 & 6\\
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c}
 \hline
-s1010 & 1 & 3 & 5 & 6 & min\\
+$S_{1010 }$& 1 & 3 & 5 & 6 & min\\
 \hline
-2 & \infty & \cellcolor{yellow}\infty &      4 &      2 & 2\\
+2 & $\infty$ & \cellcolor{yellow}$\infty$ &      4 &      2 & 2\\
 \hline
-3 &      0 & \infty &      2 &      0 & 0\\
+3 &      0 & $\infty$ &      2 &      0 & 0\\
 \hline
-4 &      2 &      2 & \infty &      0 & 0\\
+4 &      2 &      2 & $\infty$ &      0 & 0\\
 \hline
-6 &      2 &      0 &      0 & \infty & 0\\
+6 &      2 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      0 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|}
 \hline
-s1010 & 1 & 3 & 5 & 6\\
+$S_{1010 }$& 1 & 3 & 5 & 6\\
 \hline
-2 & \infty & \infty &      2 &      0\\
+2 & $\infty$ & $\infty$ &      2 &      0\\
 \hline
-3 &      0 & \infty &      2 &      0\\
+3 &      0 & $\infty$ &      2 &      0\\
 \hline
-4 &      2 &      2 & \infty &      0\\
+4 &      2 &      2 & $\infty$ &      0\\
 \hline
-6 &      2 &      0 &      0 & \infty\\
+6 &      2 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b1010 = b101 + 2 + 0 = 34}
+}\captionof*{table}{$b_{1010 }$= $b_{101 }$+ 2 + 0 = 34}
 \end{table}
 
 
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c}
 \hline
-s1011 & 1 & 5 & 6 & min\\
+$S_{1011 }$& 1 & 5 & 6 & min\\
 \hline
-3 & \cellcolor{yellow}\infty &      2 &      0 & 0\\
+3 & \cellcolor{yellow}$\infty$ &      2 &      0 & 0\\
 \hline
-4 &      2 & \infty &      0 & 0\\
+4 &      2 & $\infty$ &      0 & 0\\
 \hline
-6 &      2 &      0 & \infty & 0\\
+6 &      2 &      0 & $\infty$ & 0\\
 \hline
 min &      2 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|}
 \hline
-s1011 & 1 & 5 & 6\\
+$S_{1011 }$& 1 & 5 & 6\\
 \hline
-3 & \infty &      2 &      0\\
+3 & $\infty$ &      2 &      0\\
 \hline
-4 &      0 & \infty &      0\\
+4 &      0 & $\infty$ &      0\\
 \hline
-6 &      0 &      0 & \infty\\
+6 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b1011 = b101 + 0 + 2 = 34}
+}\captionof*{table}{$b_{1011 }$= $b_{101 }$+ 0 + 2 = 34}
 \end{table}
 
 \newpage
 
 
-Let us find edge to split on for set: s0111\\
+Let us find edge to split on for set: S0111\\
 \begin{flushleft}\begin{tabular}[]{|c|c|c|c|}
 \hline
-s0111 & 2 & 4 & 6\\
+$S_{0111 }$& 2 & 4 & 6\\
 \hline
-3 & \infty &      2 &      0\\
+3 & $\infty$ &      2 &      0\\
 \hline
-5 &      2 & \infty &      0\\
+5 &      2 & $\infty$ &      0\\
 \hline
-6 &      0 &      0 & \infty\\
+6 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
 \captionof*{table}{(3,6)}
@@ -1140,55 +1140,55 @@ s0111 & 2 & 4 & 6\\
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c}
 \hline
-s01110 & 2 & 4 & 6 & min\\
+$S_{01110 }$& 2 & 4 & 6 & min\\
 \hline
-3 & \infty &      2 & \cellcolor{yellow}\infty & 2\\
+3 & $\infty$ &      2 & \cellcolor{yellow}$\infty$ & 2\\
 \hline
-5 &      2 & \infty &      0 & 0\\
+5 &      2 & $\infty$ &      0 & 0\\
 \hline
-6 &      0 &      0 & \infty & 0\\
+6 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|}
 \hline
-s01110 & 2 & 4 & 6\\
+$S_{01110 }$& 2 & 4 & 6\\
 \hline
-3 & \infty &      0 & \infty\\
+3 & $\infty$ &      0 & $\infty$\\
 \hline
-5 &      2 & \infty &      0\\
+5 &      2 & $\infty$ &      0\\
 \hline
-6 &      0 &      0 & \infty\\
+6 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b01110 = b0111 + 2 + 0 = 36}
+}\captionof*{table}{$b_{01110 }$= $b_{0111 }$+ 2 + 0 = 36}
 \end{table}
 
 
 \begin{tabular}[]{|c|c|c|}
 \hline
-s01111 & 2 & 4\\
+$S_{01111 }$& 2 & 4\\
 \hline
-5 &      2 & \infty\\
+5 &      2 & $\infty$\\
 \hline
-6 & \infty &      0\\
+6 & $\infty$ &      0\\
 \hline
 \end{tabular}
-\captionof*{table}{b01111 = b0111 + 2 + 0 = 36}\newpage
+\captionof*{table}{$b_{01111 }$= $b_{0111 }$+ 2 + 0 = 36}\newpage
 
-Let us find edge to split on for set: s0110\\
+Let us find edge to split on for set: S0110\\
 \begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|}
 \hline
-s0110 & 2 & 3 & 4 & 6\\
+$S_{0110 }$& 2 & 3 & 4 & 6\\
 \hline
-1 & \infty & \infty &      0 &      0\\
+1 & $\infty$ & $\infty$ &      0 &      0\\
 \hline
-3 &      0 & \infty &      2 &      0\\
+3 &      0 & $\infty$ &      2 &      0\\
 \hline
-5 &      4 &      2 & \infty &      0\\
+5 &      4 &      2 & $\infty$ &      0\\
 \hline
-6 &      2 &      0 &      0 & \infty\\
+6 &      2 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
 \captionof*{table}{(3,2)}
@@ -1198,78 +1198,78 @@ s0110 & 2 & 3 & 4 & 6\\
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c}
 \hline
-s01100 & 2 & 3 & 4 & 6 & min\\
+$S_{01100 }$& 2 & 3 & 4 & 6 & min\\
 \hline
-1 & \infty & \infty &      0 &      0 & 0\\
+1 & $\infty$ & $\infty$ &      0 &      0 & 0\\
 \hline
-3 & \cellcolor{yellow}\infty & \infty &      2 &      0 & 0\\
+3 & \cellcolor{yellow}$\infty$ & $\infty$ &      2 &      0 & 0\\
 \hline
-5 &      4 &      2 & \infty &      0 & 0\\
+5 &      4 &      2 & $\infty$ &      0 & 0\\
 \hline
-6 &      2 &      0 &      0 & \infty & 0\\
+6 &      2 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      2 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|}
 \hline
-s01100 & 2 & 3 & 4 & 6\\
+$S_{01100 }$& 2 & 3 & 4 & 6\\
 \hline
-1 & \infty & \infty &      0 &      0\\
+1 & $\infty$ & $\infty$ &      0 &      0\\
 \hline
-3 & \infty & \infty &      2 &      0\\
+3 & $\infty$ & $\infty$ &      2 &      0\\
 \hline
-5 &      2 &      2 & \infty &      0\\
+5 &      2 &      2 & $\infty$ &      0\\
 \hline
-6 &      0 &      0 &      0 & \infty\\
+6 &      0 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b01100 = b0110 + 0 + 2 = 36}
+}\captionof*{table}{$b_{01100 }$= $b_{0110 }$+ 0 + 2 = 36}
 \end{table}
 
 
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c}
 \hline
-s01101 & 3 & 4 & 6 & min\\
+$S_{01101 }$& 3 & 4 & 6 & min\\
 \hline
-1 & \infty &      0 &      0 & 0\\
+1 & $\infty$ &      0 &      0 & 0\\
 \hline
-5 &      2 & \infty &      0 & 0\\
+5 &      2 & $\infty$ &      0 & 0\\
 \hline
-6 &      0 &      0 & \infty & 0\\
+6 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|}
 \hline
-s01101 & 3 & 4 & 6\\
+$S_{01101 }$& 3 & 4 & 6\\
 \hline
-1 & \infty &      0 &      0\\
+1 & $\infty$ &      0 &      0\\
 \hline
-5 &      2 & \infty &      0\\
+5 &      2 & $\infty$ &      0\\
 \hline
-6 &      0 &      0 & \infty\\
+6 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b01101 = b0110 + 0 + 0 = 34}
+}\captionof*{table}{$b_{01101 }$= $b_{0110 }$+ 0 + 0 = 34}
 \end{table}
 
 \newpage
 
-Let us find edge to split on for set: s0101\\
+Let us find edge to split on for set: S0101\\
 \begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|}
 \hline
-s0101 & 2 & 3 & 5 & 6\\
+$S_{0101 }$& 2 & 3 & 5 & 6\\
 \hline
-1 & \infty &      0 &      4 &      2\\
+1 & $\infty$ &      0 &      4 &      2\\
 \hline
-3 &      0 & \infty &      2 &      0\\
+3 &      0 & $\infty$ &      2 &      0\\
 \hline
-4 &      2 &      2 & \infty &      0\\
+4 &      2 &      2 & $\infty$ &      0\\
 \hline
-6 &      2 &      0 &      0 & \infty\\
+6 &      2 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
 \captionof*{table}{(1,3)}
@@ -1279,77 +1279,77 @@ s0101 & 2 & 3 & 5 & 6\\
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c}
 \hline
-s01010 & 2 & 3 & 5 & 6 & min\\
+$S_{01010 }$& 2 & 3 & 5 & 6 & min\\
 \hline
-1 & \infty & \cellcolor{yellow}\infty &      4 &      2 & 2\\
+1 & $\infty$ & \cellcolor{yellow}$\infty$ &      4 &      2 & 2\\
 \hline
-3 &      0 & \infty &      2 &      0 & 0\\
+3 &      0 & $\infty$ &      2 &      0 & 0\\
 \hline
-4 &      2 &      2 & \infty &      0 & 0\\
+4 &      2 &      2 & $\infty$ &      0 & 0\\
 \hline
-6 &      2 &      0 &      0 & \infty & 0\\
+6 &      2 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      0 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|}
 \hline
-s01010 & 2 & 3 & 5 & 6\\
+$S_{01010 }$& 2 & 3 & 5 & 6\\
 \hline
-1 & \infty & \infty &      2 &      0\\
+1 & $\infty$ & $\infty$ &      2 &      0\\
 \hline
-3 &      0 & \infty &      2 &      0\\
+3 &      0 & $\infty$ &      2 &      0\\
 \hline
-4 &      2 &      2 & \infty &      0\\
+4 &      2 &      2 & $\infty$ &      0\\
 \hline
-6 &      2 &      0 &      0 & \infty\\
+6 &      2 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b01010 = b0101 + 2 + 0 = 34}
+}\captionof*{table}{$b_{01010 }$= $b_{0101 }$+ 2 + 0 = 34}
 \end{table}
 
 
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c}
 \hline
-s01011 & 2 & 5 & 6 & min\\
+$S_{01011 }$& 2 & 5 & 6 & min\\
 \hline
-3 & \cellcolor{yellow}\infty &      2 &      0 & 0\\
+3 & \cellcolor{yellow}$\infty$ &      2 &      0 & 0\\
 \hline
-4 &      2 & \infty &      0 & 0\\
+4 &      2 & $\infty$ &      0 & 0\\
 \hline
-6 &      2 &      0 & \infty & 0\\
+6 &      2 &      0 & $\infty$ & 0\\
 \hline
 min &      2 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|}
 \hline
-s01011 & 2 & 5 & 6\\
+$S_{01011 }$& 2 & 5 & 6\\
 \hline
-3 & \infty &      2 &      0\\
+3 & $\infty$ &      2 &      0\\
 \hline
-4 &      0 & \infty &      0\\
+4 &      0 & $\infty$ &      0\\
 \hline
-6 &      0 &      0 & \infty\\
+6 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b01011 = b0101 + 0 + 2 = 34}
+}\captionof*{table}{$b_{01011 }$= $b_{0101 }$+ 0 + 2 = 34}
 \end{table}
 
 \newpage
 
 
-Let us find edge to split on for set: s1011\\
+Let us find edge to split on for set: S1011\\
 \begin{flushleft}\begin{tabular}[]{|c|c|c|c|}
 \hline
-s1011 & 1 & 5 & 6\\
+$S_{1011 }$& 1 & 5 & 6\\
 \hline
-3 & \infty &      2 &      0\\
+3 & $\infty$ &      2 &      0\\
 \hline
-4 &      0 & \infty &      0\\
+4 &      0 & $\infty$ &      0\\
 \hline
-6 &      0 &      0 & \infty\\
+6 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
 \captionof*{table}{(3,6)}
@@ -1359,55 +1359,55 @@ s1011 & 1 & 5 & 6\\
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c}
 \hline
-s10110 & 1 & 5 & 6 & min\\
+$S_{10110 }$& 1 & 5 & 6 & min\\
 \hline
-3 & \infty &      2 & \cellcolor{yellow}\infty & 2\\
+3 & $\infty$ &      2 & \cellcolor{yellow}$\infty$ & 2\\
 \hline
-4 &      0 & \infty &      0 & 0\\
+4 &      0 & $\infty$ &      0 & 0\\
 \hline
-6 &      0 &      0 & \infty & 0\\
+6 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|}
 \hline
-s10110 & 1 & 5 & 6\\
+$S_{10110 }$& 1 & 5 & 6\\
 \hline
-3 & \infty &      0 & \infty\\
+3 & $\infty$ &      0 & $\infty$\\
 \hline
-4 &      0 & \infty &      0\\
+4 &      0 & $\infty$ &      0\\
 \hline
-6 &      0 &      0 & \infty\\
+6 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b10110 = b1011 + 2 + 0 = 36}
+}\captionof*{table}{$b_{10110 }$= $b_{1011 }$+ 2 + 0 = 36}
 \end{table}
 
 
 \begin{tabular}[]{|c|c|c|}
 \hline
-s10111 & 1 & 5\\
+$S_{10111 }$& 1 & 5\\
 \hline
-4 &      0 & \infty\\
+4 &      0 & $\infty$\\
 \hline
-6 & \infty &      0\\
+6 & $\infty$ &      0\\
 \hline
 \end{tabular}
-\captionof*{table}{b10111 = b1011 + 0 + 0 = 34}\newpage
+\captionof*{table}{$b_{10111 }$= $b_{1011 }$+ 0 + 0 = 34}\newpage
 
-Let us find edge to split on for set: s1010\\
+Let us find edge to split on for set: S1010\\
 \begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|}
 \hline
-s1010 & 1 & 3 & 5 & 6\\
+$S_{1010 }$& 1 & 3 & 5 & 6\\
 \hline
-2 & \infty & \infty &      2 &      0\\
+2 & $\infty$ & $\infty$ &      2 &      0\\
 \hline
-3 &      0 & \infty &      2 &      0\\
+3 &      0 & $\infty$ &      2 &      0\\
 \hline
-4 &      2 &      2 & \infty &      0\\
+4 &      2 &      2 & $\infty$ &      0\\
 \hline
-6 &      2 &      0 &      0 & \infty\\
+6 &      2 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
 \captionof*{table}{(2,6)}
@@ -1417,76 +1417,76 @@ s1010 & 1 & 3 & 5 & 6\\
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c}
 \hline
-s10100 & 1 & 3 & 5 & 6 & min\\
+$S_{10100 }$& 1 & 3 & 5 & 6 & min\\
 \hline
-2 & \infty & \infty &      2 & \cellcolor{yellow}\infty & 2\\
+2 & $\infty$ & $\infty$ &      2 & \cellcolor{yellow}$\infty$ & 2\\
 \hline
-3 &      0 & \infty &      2 &      0 & 0\\
+3 &      0 & $\infty$ &      2 &      0 & 0\\
 \hline
-4 &      2 &      2 & \infty &      0 & 0\\
+4 &      2 &      2 & $\infty$ &      0 & 0\\
 \hline
-6 &      2 &      0 &      0 & \infty & 0\\
+6 &      2 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      0 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|}
 \hline
-s10100 & 1 & 3 & 5 & 6\\
+$S_{10100 }$& 1 & 3 & 5 & 6\\
 \hline
-2 & \infty & \infty &      0 & \infty\\
+2 & $\infty$ & $\infty$ &      0 & $\infty$\\
 \hline
-3 &      0 & \infty &      2 &      0\\
+3 &      0 & $\infty$ &      2 &      0\\
 \hline
-4 &      2 &      2 & \infty &      0\\
+4 &      2 &      2 & $\infty$ &      0\\
 \hline
-6 &      2 &      0 &      0 & \infty\\
+6 &      2 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b10100 = b1010 + 2 + 0 = 36}
+}\captionof*{table}{$b_{10100 }$= $b_{1010 }$+ 2 + 0 = 36}
 \end{table}
 
 
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c}
 \hline
-s10101 & 1 & 3 & 5 & min\\
+$S_{10101 }$& 1 & 3 & 5 & min\\
 \hline
-3 &      0 & \infty &      2 & 0\\
+3 &      0 & $\infty$ &      2 & 0\\
 \hline
-4 &      2 &      2 & \infty & 2\\
+4 &      2 &      2 & $\infty$ & 2\\
 \hline
-6 & \cellcolor{yellow}\infty &      0 &      0 & 0\\
+6 & \cellcolor{yellow}$\infty$ &      0 &      0 & 0\\
 \hline
 min &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|}
 \hline
-s10101 & 1 & 3 & 5\\
+$S_{10101 }$& 1 & 3 & 5\\
 \hline
-3 &      0 & \infty &      2\\
+3 &      0 & $\infty$ &      2\\
 \hline
-4 &      0 &      0 & \infty\\
+4 &      0 &      0 & $\infty$\\
 \hline
-6 & \infty &      0 &      0\\
+6 & $\infty$ &      0 &      0\\
 \hline
 \end{tabular}
-}\captionof*{table}{b10101 = b1010 + 2 + 0 = 36}
+}\captionof*{table}{$b_{10101 }$= $b_{1010 }$+ 2 + 0 = 36}
 \end{table}
 
 \newpage
 
-Let us find edge to split on for set: s01011\\
+Let us find edge to split on for set: S01011\\
 \begin{flushleft}\begin{tabular}[]{|c|c|c|c|}
 \hline
-s01011 & 2 & 5 & 6\\
+$S_{01011 }$& 2 & 5 & 6\\
 \hline
-3 & \infty &      2 &      0\\
+3 & $\infty$ &      2 &      0\\
 \hline
-4 &      0 & \infty &      0\\
+4 &      0 & $\infty$ &      0\\
 \hline
-6 &      0 &      0 & \infty\\
+6 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
 \captionof*{table}{(3,6)}
@@ -1496,55 +1496,55 @@ s01011 & 2 & 5 & 6\\
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c}
 \hline
-s010110 & 2 & 5 & 6 & min\\
+$S_{010110 }$& 2 & 5 & 6 & min\\
 \hline
-3 & \infty &      2 & \cellcolor{yellow}\infty & 2\\
+3 & $\infty$ &      2 & \cellcolor{yellow}$\infty$ & 2\\
 \hline
-4 &      0 & \infty &      0 & 0\\
+4 &      0 & $\infty$ &      0 & 0\\
 \hline
-6 &      0 &      0 & \infty & 0\\
+6 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|}
 \hline
-s010110 & 2 & 5 & 6\\
+$S_{010110 }$& 2 & 5 & 6\\
 \hline
-3 & \infty &      0 & \infty\\
+3 & $\infty$ &      0 & $\infty$\\
 \hline
-4 &      0 & \infty &      0\\
+4 &      0 & $\infty$ &      0\\
 \hline
-6 &      0 &      0 & \infty\\
+6 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b010110 = b01011 + 2 + 0 = 36}
+}\captionof*{table}{$b_{010110 }$= $b_{01011 }$+ 2 + 0 = 36}
 \end{table}
 
 
 \begin{tabular}[]{|c|c|c|}
 \hline
-s010111 & 2 & 5\\
+$S_{010111 }$& 2 & 5\\
 \hline
-4 &      0 & \infty\\
+4 &      0 & $\infty$\\
 \hline
-6 & \infty &      0\\
+6 & $\infty$ &      0\\
 \hline
 \end{tabular}
-\captionof*{table}{b010111 = b01011 + 0 + 0 = 34}\newpage
+\captionof*{table}{$b_{010111 }$= $b_{01011 }$+ 0 + 0 = 34}\newpage
 
-Let us find edge to split on for set: s01010\\
+Let us find edge to split on for set: S01010\\
 \begin{flushleft}\begin{tabular}[]{|c|c|c|c|c|}
 \hline
-s01010 & 2 & 3 & 5 & 6\\
+$S_{01010 }$& 2 & 3 & 5 & 6\\
 \hline
-1 & \infty & \infty &      2 &      0\\
+1 & $\infty$ & $\infty$ &      2 &      0\\
 \hline
-3 &      0 & \infty &      2 &      0\\
+3 &      0 & $\infty$ &      2 &      0\\
 \hline
-4 &      2 &      2 & \infty &      0\\
+4 &      2 &      2 & $\infty$ &      0\\
 \hline
-6 &      2 &      0 &      0 & \infty\\
+6 &      2 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
 \captionof*{table}{(1,6)}
@@ -1554,62 +1554,62 @@ s01010 & 2 & 3 & 5 & 6\\
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|c}
 \hline
-s010100 & 2 & 3 & 5 & 6 & min\\
+$S_{010100 }$& 2 & 3 & 5 & 6 & min\\
 \hline
-1 & \infty & \infty &      2 & \cellcolor{yellow}\infty & 2\\
+1 & $\infty$ & $\infty$ &      2 & \cellcolor{yellow}$\infty$ & 2\\
 \hline
-3 &      0 & \infty &      2 &      0 & 0\\
+3 &      0 & $\infty$ &      2 &      0 & 0\\
 \hline
-4 &      2 &      2 & \infty &      0 & 0\\
+4 &      2 &      2 & $\infty$ &      0 & 0\\
 \hline
-6 &      2 &      0 &      0 & \infty & 0\\
+6 &      2 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      0 &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c|}
 \hline
-s010100 & 2 & 3 & 5 & 6\\
+$S_{010100 }$& 2 & 3 & 5 & 6\\
 \hline
-1 & \infty & \infty &      0 & \infty\\
+1 & $\infty$ & $\infty$ &      0 & $\infty$\\
 \hline
-3 &      0 & \infty &      2 &      0\\
+3 &      0 & $\infty$ &      2 &      0\\
 \hline
-4 &      2 &      2 & \infty &      0\\
+4 &      2 &      2 & $\infty$ &      0\\
 \hline
-6 &      2 &      0 &      0 & \infty\\
+6 &      2 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b010100 = b01010 + 2 + 0 = 36}
+}\captionof*{table}{$b_{010100 }$= $b_{01010 }$+ 2 + 0 = 36}
 \end{table}
 
 
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c}
 \hline
-s010101 & 2 & 3 & 5 & min\\
+$S_{010101 }$& 2 & 3 & 5 & min\\
 \hline
-3 &      0 & \infty &      2 & 0\\
+3 &      0 & $\infty$ &      2 & 0\\
 \hline
-4 &      2 &      2 & \infty & 2\\
+4 &      2 &      2 & $\infty$ & 2\\
 \hline
-6 & \cellcolor{yellow}\infty &      0 &      0 & 0\\
+6 & \cellcolor{yellow}$\infty$ &      0 &      0 & 0\\
 \hline
 min &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|}
 \hline
-s010101 & 2 & 3 & 5\\
+$S_{010101 }$& 2 & 3 & 5\\
 \hline
-3 &      0 & \infty &      2\\
+3 &      0 & $\infty$ &      2\\
 \hline
-4 &      0 &      0 & \infty\\
+4 &      0 &      0 & $\infty$\\
 \hline
-6 & \infty &      0 &      0\\
+6 & $\infty$ &      0 &      0\\
 \hline
 \end{tabular}
-}\captionof*{table}{b010101 = b01010 + 2 + 0 = 36}
+}\captionof*{table}{$b_{010101 }$= $b_{01010 }$+ 2 + 0 = 36}
 \end{table}
 
 \newpage
@@ -1618,16 +1618,16 @@ s010101 & 2 & 3 & 5\\
 
 
 
-Let us find edge to split on for set: s1101\\
+Let us find edge to split on for set: S1101\\
 \begin{flushleft}\begin{tabular}[]{|c|c|c|c|}
 \hline
-s1101 & 3 & 4 & 6\\
+$S_{1101 }$& 3 & 4 & 6\\
 \hline
-2 & \infty &      0 &      0\\
+2 & $\infty$ &      0 &      0\\
 \hline
-5 &      2 & \infty &      0\\
+5 &      2 & $\infty$ &      0\\
 \hline
-6 &      0 &      0 & \infty\\
+6 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
 \captionof*{table}{(5,6)}
@@ -1637,56 +1637,56 @@ s1101 & 3 & 4 & 6\\
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c}
 \hline
-s11010 & 3 & 4 & 6 & min\\
+$S_{11010 }$& 3 & 4 & 6 & min\\
 \hline
-2 & \infty &      0 &      0 & 0\\
+2 & $\infty$ &      0 &      0 & 0\\
 \hline
-5 &      2 & \infty & \cellcolor{yellow}\infty & 2\\
+5 &      2 & $\infty$ & \cellcolor{yellow}$\infty$ & 2\\
 \hline
-6 &      0 &      0 & \infty & 0\\
+6 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|}
 \hline
-s11010 & 3 & 4 & 6\\
+$S_{11010 }$& 3 & 4 & 6\\
 \hline
-2 & \infty &      0 &      0\\
+2 & $\infty$ &      0 &      0\\
 \hline
-5 &      0 & \infty & \infty\\
+5 &      0 & $\infty$ & $\infty$\\
 \hline
-6 &      0 &      0 & \infty\\
+6 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b11010 = b1101 + 2 + 0 = 36}
+}\captionof*{table}{$b_{11010 }$= $b_{1101 }$+ 2 + 0 = 36}
 \end{table}
 
 
 \begin{tabular}[]{|c|c|c|}
 \hline
-s11011 & 3 & 4\\
+$S_{11011 }$& 3 & 4\\
 \hline
-2 & \infty &      0\\
+2 & $\infty$ &      0\\
 \hline
-6 &      0 & \infty\\
+6 &      0 & $\infty$\\
 \hline
 \end{tabular}
-\captionof*{table}{b11011 = b1101 + 0 + 0 = 34}\newpage
+\captionof*{table}{$b_{11011 }$= $b_{1101 }$+ 0 + 0 = 34}\newpage
 
 
 
 
-Let us find edge to split on for set: s01101\\
+Let us find edge to split on for set: S01101\\
 \begin{flushleft}\begin{tabular}[]{|c|c|c|c|}
 \hline
-s01101 & 3 & 4 & 6\\
+$S_{01101 }$& 3 & 4 & 6\\
 \hline
-1 & \infty &      0 &      0\\
+1 & $\infty$ &      0 &      0\\
 \hline
-5 &      2 & \infty &      0\\
+5 &      2 & $\infty$ &      0\\
 \hline
-6 &      0 &      0 & \infty\\
+6 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
 \captionof*{table}{(5,6)}
@@ -1696,72 +1696,52 @@ s01101 & 3 & 4 & 6\\
 \begin{table}[ht]
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|c}
 \hline
-s011010 & 3 & 4 & 6 & min\\
+$S_{011010 }$& 3 & 4 & 6 & min\\
 \hline
-1 & \infty &      0 &      0 & 0\\
+1 & $\infty$ &      0 &      0 & 0\\
 \hline
-5 &      2 & \infty & \cellcolor{yellow}\infty & 2\\
+5 &      2 & $\infty$ & \cellcolor{yellow}$\infty$ & 2\\
 \hline
-6 &      0 &      0 & \infty & 0\\
+6 &      0 &      0 & $\infty$ & 0\\
 \hline
 min &      0 &      0 &      0\\
 \end{tabular}
 }\hfill
 \subfloat[][]{\begin{tabular}[]{|c|c|c|c|}
 \hline
-s011010 & 3 & 4 & 6\\
+$S_{011010 }$& 3 & 4 & 6\\
 \hline
-1 & \infty &      0 &      0\\
+1 & $\infty$ &      0 &      0\\
 \hline
-5 &      0 & \infty & \infty\\
+5 &      0 & $\infty$ & $\infty$\\
 \hline
-6 &      0 &      0 & \infty\\
+6 &      0 &      0 & $\infty$\\
 \hline
 \end{tabular}
-}\captionof*{table}{b011010 = b01101 + 2 + 0 = 36}
+}\captionof*{table}{$b_{011010 }$= $b_{01101 }$+ 2 + 0 = 36}
 \end{table}
 
 
 \begin{tabular}[]{|c|c|c|}
 \hline
-s011011 & 3 & 4\\
+$S_{011011 }$& 3 & 4\\
 \hline
-1 & \infty &      0\\
+1 & $\infty$ &      0\\
 \hline
-6 &      0 & \infty\\
-\hline
-\end{tabular}
-\captionof*{table}{b011011 = b01101 + 0 + 0 = 34}\newpage
-
-
-Let us find edge to split on for set: s10111\\
-\begin{flushleft}\begin{tabular}[]{|c|c|c|}
-\hline
-s10111 & 1 & 5\\
-\hline
-4 &      0 & \infty\\
-\hline
-6 & \infty &      0\\
+6 &      0 & $\infty$\\
 \hline
 \end{tabular}
-\captionof*{table}{}
-\end{flushleft}
+\captionof*{table}{$b_{011011 }$= $b_{01101 }$+ 0 + 0 = 34}\newpage
 
 
-
-\newpage
-
-
-
-
-Let us find edge to split on for set: s010111\\
+Let us find edge to split on for set: S10111\\
 \begin{flushleft}\begin{tabular}[]{|c|c|c|}
 \hline
-s010111 & 2 & 5\\
+$S_{10111 }$& 1 & 5\\
 \hline
-4 &      0 & \infty\\
+4 &      0 & $\infty$\\
 \hline
-6 & \infty &      0\\
+6 & $\infty$ &      0\\
 \hline
 \end{tabular}
 \captionof*{table}{}
@@ -1774,14 +1754,14 @@ s010111 & 2 & 5\\
 
 
 
-Let us find edge to split on for set: s11011\\
+Let us find edge to split on for set: S010111\\
 \begin{flushleft}\begin{tabular}[]{|c|c|c|}
 \hline
-s11011 & 3 & 4\\
+$S_{010111 }$& 2 & 5\\
 \hline
-2 & \infty &      0\\
+4 &      0 & $\infty$\\
 \hline
-6 &      0 & \infty\\
+6 & $\infty$ &      0\\
 \hline
 \end{tabular}
 \captionof*{table}{}
@@ -1792,14 +1772,34 @@ s11011 & 3 & 4\\
 \newpage
 
 
-Let us find edge to split on for set: s011011\\
+
+
+Let us find edge to split on for set: S11011\\
 \begin{flushleft}\begin{tabular}[]{|c|c|c|}
 \hline
-s011011 & 3 & 4\\
+$S_{11011 }$& 3 & 4\\
 \hline
-1 & \infty &      0\\
+2 & $\infty$ &      0\\
 \hline
-6 &      0 & \infty\\
+6 &      0 & $\infty$\\
+\hline
+\end{tabular}
+\captionof*{table}{}
+\end{flushleft}
+
+
+
+\newpage
+
+
+Let us find edge to split on for set: S011011\\
+\begin{flushleft}\begin{tabular}[]{|c|c|c|}
+\hline
+$S_{011011 }$& 3 & 4\\
+\hline
+1 & $\infty$ &      0\\
+\hline
+6 &      0 & $\infty$\\
 \hline
 \end{tabular}
 \captionof*{table}{}

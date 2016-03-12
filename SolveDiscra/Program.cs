@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.IO;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace SolveDiscra
 {
@@ -100,7 +101,7 @@ namespace SolveDiscra
 			}
 			Console.WriteLine (startmat.ToString ());
 			var node = new Node (startmat);
-			node.name = "s";
+			node.name = "S";
 			// step 1, calculate low_bound_weight
 			node.weight = node.NormaliseGetDelta ();
 			node.drop = node.matrix.GetSubproblemSplitEdge ();
@@ -184,7 +185,13 @@ namespace SolveDiscra
 			List<string> print = new List<string> ();
 			print.Add (LatexData.header);
 			foreach (Node nd in all_nodes) {
-				print.Add (nd.LatexCommand ());
+				string command = nd.LatexCommand ();
+				foreach(Match m in Regex.Matches (command, @"[S,b]\d{1,} ")){
+					string s = m.ToString();
+					s = s.Insert (1, "_{");
+					command = command.Replace (m.ToString (), "$" + s + "}$");
+				}
+				print.Add (command);
 			}
 			print.Add (LatexData.footer);
 			File.WriteAllLines ("latex_commands.tex", print);
