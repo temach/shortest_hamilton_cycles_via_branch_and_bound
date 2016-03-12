@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace SolveDiscra
 {
@@ -157,7 +158,7 @@ namespace SolveDiscra
 					int count = following.Count ();
 					if (count > 1) {
 						throw new Exception ("more than one outbound edge, "
-						                     + "this is result of some earlier error.");
+						+ "this is result of some earlier error.");
 					} else if (count == 1) {
 						cur = following.First ();
 					} else if (count == 0) {
@@ -211,16 +212,16 @@ namespace SolveDiscra
 
 		public string PrintOneChild (Node ch) {
 			return string.Format ("child {0} matrix:\n"
-			                      + "debug underlying matrix:\n{1}\n"
-			                      + "output martix before:\n{2}\n"
-			                      + "output matrix AFTER:\n{3}\n"
-			                      + "low bound b:{4}\n"
+			+ "debug underlying matrix:\n{1}\n"
+			+ "output martix before:\n{2}\n"
+			+ "output matrix AFTER:\n{3}\n"
+			+ "low bound b:{4}\n"
 			                      , ch.name
 			                      , ch.matrix
 			                      , ch.parent.print_matrix
 			                      , ch.print_matrix
 			                      , ch.weight
-			                     );
+			);
 		}
 
 		public string[] PrintChildren () {
@@ -239,10 +240,10 @@ namespace SolveDiscra
 			string endpage = new string ('\n', 4);
 			string[] children = PrintChildren ();
 			string title = string.Format ("wroking with node:{0}\n"
-			                              + "node matrix:\n{1}\n{2}\n{3}\n" 
+			               + "node matrix:\n{1}\n{2}\n{3}\n" 
 			                              , name
 			                              , this.print_matrix, this.DotEdge (), this.DotPath ()
-			                             );
+			               );
 			string why_stop = "\n" + this.why_no_children + "\n";
 			return newpage + title + children [0] + children [1] + why_stop + endpage;
 		}
@@ -257,7 +258,7 @@ namespace SolveDiscra
 			                                   , DotWeight ()
 			                                   , DotEdge ()
 			                                   , DotPath ()
-			                                  );
+			                    );
 			return node_inner;
 		}
 
@@ -280,7 +281,7 @@ namespace SolveDiscra
 			if (this.path.Count == 6) {
 				finpath = "path=" + string.Join (" ",
 				                                 GetNodePath ().Select (p => p.X + 1)).Replace (" ",
-				                                                                                           "");
+				                                                                                "");
 			}
 			return finpath;
 		}
@@ -355,11 +356,11 @@ namespace SolveDiscra
 		// for s0: print s0.print_matrix
 		// for s1: print s1.print_matrix
 		public string TexTableFromMatrix (Matrix some_mat, Node nd) {
-			var cur_mat = some_mat.DeepCopy ();
+			var cur_matrix = some_mat.DeepCopy ();
 			// Note: only add +1 for vertical line at table end + 1 for row names
-			var column_lines = Enumerable.Repeat ("|", cur_mat.qtyCols + 2);
+			var column_lines = Enumerable.Repeat ("|", cur_matrix.qtyCols + 2);
 			string table_layout = string.Join ("c", column_lines);
-			//var columns_names = Enumerable.Repeat ("a", cur_mat.qtyCols).ToList ();
+			table_layout = table_layout.Substring (1, table_layout.Length - 1);
 			string table_begin = string.Format (tex_tabular, table_layout);
 			// when we have the path is of the final node it has 6 elements, so
 			// when we try to get the col_names we get nothing as result. Hence we must cut out the last two
@@ -372,13 +373,19 @@ namespace SolveDiscra
 			var row_names = row_col_names.Item1;
 			var col_names = row_col_names.Item2;
 			col_names.Insert (0, nd.name);
-			List<string> table_inner = cur_mat.mat.Select (
-				(row, index) => row_names [index] + " & " + Row2Tex (row) + tex_nl + tex_hline).ToList ();
+			List<string> table_inner = cur_matrix.mat.Select ((row, index) => row_names [index] + " & " + Row2Tex (row) + tex_nl + string.Format ("\\cline{{2-{0}}}",
+			                                                                                                                                   row.Count + 1)).ToList ();
 			// add first row of names
+			string col_names_string = string.Join (" & ", col_names) + " ";
+			Console.WriteLine (col_names_string);
+			foreach (Match m in Regex.Matches (col_names_string, @" \d{1,} ")) {
+				string s = m.ToString ();
+				col_names_string = col_names_string.Replace (m.ToString (), "\\multicolumn{1}{c}{" + s.Substring (1, s.Length - 2) + "}");
+			}
+			col_names_string = col_names_string.Replace (" &", " } &").Insert(0,"\\multicolumn{1}{c}{ ");
 			table_inner.Insert (0,
-			                    string.Join (" & ", col_names) + tex_nl + tex_hline);
-			// insert leading \hline
-			table_inner.Insert (0, tex_hline);
+			                    col_names_string + tex_nl + string.Format ("\\cline{{2-{0}}}",
+			                                                               cur_matrix.mat.Count + 1));
 			return table_begin + string.Join ("\n", table_inner) + tex_table_end;
 		}
 
@@ -391,7 +398,7 @@ namespace SolveDiscra
 			var column_lines = Enumerable.Repeat ("|", cur_matrix.qtyCols + 3);
 			string table_layout = string.Join ("c", column_lines);
 			// remove last vertical bar in for min apha value column
-			table_layout = table_layout.Substring (0, table_layout.Length - 1);
+			table_layout = table_layout.Substring (1, table_layout.Length - 2);
 			// Get column and row names
 			var row_col_names = TexGetCurrentRowsCols (nd.path);
 			var row_names = row_col_names.Item1;
@@ -401,19 +408,33 @@ namespace SolveDiscra
 			string table_begin = string.Format (tex_tabular, table_layout);
 			// process the inner table. The "a & " is for extra column with names
 			List<string> table_inner = cur_matrix.mat.Select (
-				(row, index) => row_names [index] + " & "
+				                           (row, index) => row_names [index] + " & "
 				// when we are on the correct row, highlight the given cell
-				+ ((index == color_cell.X) ? Row2Tex (row, color_cell.Y) : Row2Tex (row))
-				+ " & " + print_min_rows [index]
-				+ tex_nl + tex_hline
-			).ToList ();
+				                           + ((index == color_cell.X) ? Row2Tex (row,
+				                                                                 color_cell.Y) : Row2Tex (row))
+				                           + " & " + print_min_rows [index]
+				                           + tex_nl + string.Format ("\\cline{{2-{0}}}",
+				                                                     row.Count + 1)
+			                           ).ToList ();
 			// add last row of minimum values
-			table_inner.Add ("min & " + Row2Tex (print_min_cols) + @"\\");
+			string min_row = "\\multicolumn{1}{c}{min} & " + Row2Tex (print_min_cols) + @" \\";
+			foreach (Match m in Regex.Matches (min_row, @" \d{1,} ")) {
+				string s = m.ToString ();
+				min_row = min_row.Replace (m.ToString (),
+				                           "\\multicolumn{1}{c}{" + s.Substring (1,
+				                                                                 s.Length - 2) + "}");
+			}
+			table_inner.Add (min_row);
 			// add first row of names
+			string col_names_string = string.Join (" & ", col_names);
+			foreach (Match m in Regex.Matches (col_names_string, @" \d{1,} ")) {
+				string s = m.ToString ();
+				col_names_string = col_names_string.Replace (m.ToString (), "\\multicolumn{1}{c}{" + s.Substring (1, s.Length - 2) + "}");
+			}
+			col_names_string = col_names_string.Replace (" &", " } &").Insert(0,"\\multicolumn{1}{c}{ ");
 			table_inner.Insert (0,
-			                    string.Join (" & ", col_names) + tex_nl + tex_hline);
-			// insert leading \hline
-			table_inner.Insert (0, tex_hline);
+			                    col_names_string + tex_nl + string.Format ("\\cline{{2-{0}}}",
+			                                                               cur_matrix.mat.Count + 1));
 			return table_begin + string.Join ("\n", table_inner) + tex_table_end;
 		}
 
@@ -425,7 +446,7 @@ namespace SolveDiscra
 			var column_lines = Enumerable.Repeat ("|", cur_matrix.qtyCols + 3);
 			string table_layout = string.Join ("c", column_lines);
 			// remove last vertical bar in for min apha value column
-			table_layout = table_layout.Substring (0, table_layout.Length - 1);
+			table_layout = table_layout.Substring (1, table_layout.Length - 2);
 			// Get column and row names
 			var row_col_names = TexGetCurrentRowsCols (nd.path);
 			var row_names = row_col_names.Item1;
@@ -435,17 +456,30 @@ namespace SolveDiscra
 			string table_begin = string.Format (tex_tabular, table_layout);
 			// process the inner table. The "a & " is for extra column with names
 			List<string> table_inner = cur_matrix.mat.Select (
-				(row, index) => row_names [index] + " & "
-				+ Row2Tex (row) + " & "
-				+ print_min_rows [index] + tex_nl + tex_hline
-			).ToList ();
+				                           (row, index) => row_names [index] + " & "
+				                           + Row2Tex (row) + " & "
+				                           + print_min_rows [index] + tex_nl + string.Format ("\\cline{{2-{0}}}",
+				                                                                              row.Count + 1)
+			                           ).ToList ();
 			// add last row of minimum values
-			table_inner.Add ("min & " + Row2Tex (print_min_cols) + @"\\");
+			string min_row = "\\multicolumn{1}{c}{min} & " + Row2Tex (print_min_cols) + @" \\";
+			foreach (Match m in Regex.Matches (min_row, @" \d{1,} ")) {
+				string s = m.ToString ();
+				min_row = min_row.Replace (m.ToString (),
+				                           "\\multicolumn{1}{c}{" + s.Substring (1,
+				                                                                 s.Length - 2) + "}");
+			}
+			table_inner.Add (min_row);
 			// add first row of names
+			string col_names_string = string.Join (" & ", col_names);
+			foreach (Match m in Regex.Matches (col_names_string, @" \d{1,} ")) {
+				string s = m.ToString ();
+				col_names_string = col_names_string.Replace (m.ToString (), "\\multicolumn{1}{c}{" + s.Substring (1, s.Length - 2) + "}");
+			}
+			col_names_string = col_names_string.Replace (" &", " } &").Insert(0,"\\multicolumn{1}{c}{ ");
 			table_inner.Insert (0,
-			                    string.Join (" & ", col_names) + tex_nl + tex_hline);
-			// insert leading \hline
-			table_inner.Insert (0, tex_hline);
+			                    col_names_string + tex_nl + string.Format ("\\cline{{2-{0}}}",
+			                                                               cur_matrix.mat.Count + 1));
 			return table_begin + string.Join ("\n", table_inner) + tex_table_end;
 		}
 
@@ -465,7 +499,6 @@ namespace SolveDiscra
 
 		// to calculate child's lower bounds
 		public string TexLowerBound (Node ch) {
-			//FIXME
 			string this_node_low_bound_str = name.Replace ('S', 'b');
 			string child_low_bound_str = ch.name.Replace ('S', 'b');
 			string low_b_calculation = string.Format ("{0} = {1} + {2} + {3} = {4}"
@@ -569,7 +602,7 @@ namespace SolveDiscra
 			                                       , flushleft_current_print
 			                                       , s0_data_row
 			                                       , s1_data_row
-			                                      );
+			                        );
 			return string.Format (tex_page_head, this.name) + node_full_data + tex_newpage;
 		}
 
